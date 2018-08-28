@@ -1,0 +1,145 @@
+﻿<Window x:Name="FarmPlanne"
+        x:Class="SDV_Collection_Manager_v2.FarmPlanner"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:SDV_Collection_Manager_v2"
+        xmlns:managers="clr-namespace:Managers"
+        xmlns:ag="clr-namespace:WpfAutoGrid;assembly=WpfAutoGrid"
+        mc:Ignorable="d"
+        Title="FarmPlanner"
+        ResizeMode="CanMinimize"
+        Cursor="Hand"
+        WindowStartupLocation="CenterScreen"
+        SizeToContent="WidthAndHeight"
+        Closing="Window_Closing"
+        Height="150">
+    <Window.Resources>
+        <managers:FarmManager x:Key="farmManager" />
+        <managers:OptionsMenu x:Key="options" />
+        <!--#region Brushes-->
+        <SolidColorBrush x:Key="RedBrush"
+                         Color="Red" />
+        <SolidColorBrush x:Key="SolidBorderBrush"
+                         Color="#FFB14E05" />
+        <SolidColorBrush x:Key="UnselectedBackground"
+                         Color="#FFF0AF6A" />
+        <SolidColorBrush x:Key="SelectedBackGround"
+                         Color="#FFDE8A32" />
+        <SolidColorBrush x:Key="CalendarBackground"
+                         Color="#FFFBEBC2" />
+        <SolidColorBrush x:Key="CalendarBackgroundNote"
+                         Color="#FFC3E29C" />
+        <SolidColorBrush x:Key="SpringSelected"
+                         Color="#FF60FF30" />
+        <SolidColorBrush x:Key="SpringUnselected"
+                         Color="#FF2B742C" />
+        <SolidColorBrush x:Key="SummerSelected"
+                         Color="#FFFFAC00" />
+        <SolidColorBrush x:Key="SummerUnselected"
+                         Color="#FFA47229" />
+        <SolidColorBrush x:Key="FallSelected"
+                         Color="#FFEA45E0" />
+        <SolidColorBrush x:Key="FallUnselected"
+                         Color="#FF853560" />
+        <SolidColorBrush x:Key="WinterSelected"
+                         Color="#FF46C7FF" />
+        <SolidColorBrush x:Key="WinterUnselected"
+                         Color="#FF3E68A0" />
+        <!--#endregion-->
+    </Window.Resources>
+    <Grid Name="mainGrid"
+          Background="{Binding Mode=OneWay, Source={StaticResource UnselectedBackground}}">
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="{Binding Width, ElementName=layoutSelection}" />
+            <ColumnDefinition Width="{Binding Width, ElementName=resizer}" />
+            <ColumnDefinition Width="{Binding Width, ElementName=TerrainObjects}" />
+            <ColumnDefinition Width="*" />
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="auto" />
+            <RowDefinition Height="*" />
+        </Grid.RowDefinitions>
+        <Border Name="layoutSelector"
+                Grid.Column="0"
+                Width="auto"
+                BorderBrush="{Binding Mode=OneWay, Source={StaticResource SolidBorderBrush}}"
+                BorderThickness="1"
+                Margin="1">
+            <DockPanel>
+                <TextBlock Text="Layout"
+                           DockPanel.Dock="Top"
+                           HorizontalAlignment="Center" />
+                <ComboBox Name="layoutSelection"
+                          ItemsSource="{Binding FarmLayouts, Source={StaticResource farmManager}}"
+                      SelectedItem="{Binding SelectedLayout, Source={StaticResource options}, UpdateSourceTrigger=PropertyChanged}"
+                      DisplayMemberPath="Name"
+                      BorderBrush="Black" />
+            </DockPanel>
+        </Border>
+        <Border Name="resizer"
+                Grid.Column="1"
+                Width="auto"
+                BorderBrush="{Binding Mode=OneWay, Source={StaticResource SolidBorderBrush}}"
+                BorderThickness="1"
+                Margin="1">
+            <DockPanel>
+                <TextBlock Text="Resize(%)"
+                           DockPanel.Dock="Top"
+                           HorizontalAlignment="Center" />
+                <ComboBox Name="sizePicker"
+                          SelectedValue="{Binding LayoutSize, Source={StaticResource options}}"
+                          ItemsSource="{Binding Resolutions, Source={StaticResource farmManager}}"
+                          ToolTip="Resizing can freeze the application for few seocnds." />
+            </DockPanel>
+        </Border>
+        <Border Name="objects"
+                Grid.Column="2"
+                Width="auto"
+                BorderBrush="{Binding Mode=OneWay, Source={StaticResource SolidBorderBrush}}"
+                BorderThickness="1"
+                Margin="1">
+            <DockPanel>
+                <TextBlock Text="Terrain"
+                           DockPanel.Dock="Top"
+                           HorizontalAlignment="Center" />
+                <ComboBox Name="TerrainObjects"
+                          ItemsSource="{Binding TerrainObjects, Source={StaticResource farmManager}}"
+                          SelectedItem="{Binding SelectedTerrain, Source={StaticResource farmManager}, UpdateSourceTrigger=PropertyChanged}">
+                <ComboBox.ItemTemplate>
+                    <DataTemplate>
+                        <DockPanel>
+                            <Image Source="{Binding Image}"
+                                   Width="15"
+                                   Height="15"
+                                   DockPanel.Dock="Left" />
+                            <TextBlock Text="{Binding Name}"
+                                       DockPanel.Dock="Left" />
+                        </DockPanel>
+                    </DataTemplate>
+                </ComboBox.ItemTemplate>
+            </ComboBox>
+            </DockPanel>
+        </Border>
+        <Grid Grid.Row="1"
+              Grid.ColumnSpan="{Binding ColumnDefinitions.Count, ElementName=mainGrid, Mode=OneWay}"
+              Width="{Binding LayoutWidth, Source={StaticResource options}, UpdateSourceTrigger=PropertyChanged}"
+              Height="{Binding LayoutHeight, Source={StaticResource options}, UpdateSourceTrigger=PropertyChanged}">
+            <Grid x:Name="farmLayout">
+                <Image Name="FarmLayout"
+                       Source="{Binding SelectedItem.Image, ElementName=layoutSelection}" />
+            </Grid>
+            <ScrollViewer>
+            <ag:AutoGrid Name="layoutOverlay"
+                         ColumnCount="80"
+                         ColumnWidth="*"
+                         RowCount="66"
+                         RowHeight="*"
+                         Background="Transparent"
+                         PreviewMouseLeftButtonDown="layoutOverlay_PreviewMouseLeftButtonDown">
+            </ag:AutoGrid>
+            </ScrollViewer>
+        </Grid>
+    </Grid>
+</Window>

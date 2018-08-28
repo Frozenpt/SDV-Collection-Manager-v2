@@ -1,0 +1,161 @@
+<?xml version="1.0" encoding="utf-8"?>
+<calendar>
+  <spring>
+    <day id="1" playernote="" cropnote="" />
+    <day id="2" playernote="" cropnote="" />
+    <day id="3" playernote="" cropnote="" />
+    <day id="4" event="Kent" playernote="" cropnote="" />
+    <day id="5" playernote="" cropnote="" />
+    <day id="6" playernote="" cropnote="" />
+    <day id="7" event="Lewis" playernote="" cropnote="" />
+    <day id="8" playernote="" cropnote="" />
+    <day id="9" playernote="" cropnote="" />
+    <day id="10" event="Vincent" playernote="" cropnote="" />
+    <day id="11" playernote="" cropnote="" />
+    <day id="12" playernote="" cropnote="" />
+    <day id="13" event="Egg Festival" playernote="" cropnote="" />
+    <day id="14" event="Haley" playernote="" cropnote="" />
+    <day id="15" playernote="" cropnote="" />
+    <day id="16" playernote="" cropnote="" />
+    <day id="17" playernote="" cropnote="" />
+    <day id="18" event="Pam" playernote="" cropnote="" />
+    <day id="19" playernote="" cropnote="" />
+    <day id="20" event="Shane" playernote="" cropnote="" />
+    <day id="21" playernote="" cropnote="" />
+    <day id="22" playernote="" cropnote="" />
+    <day id="23" playernote="" cropnote="" />
+    <day id="24" event="Flower Dance" playernote="" cropnote="" />
+    <day id="25" playernote="" cropnote="" />
+    <day id="26" event="Pierre" playernote="" cropnote="" />
+    <day id="27" event="Emily" playernote="" cropnote="" />
+    <day id="28" playernote="" cropnote="" />
+  </spring>
+  <summer>
+    <day id="1" playernote="" cropnote="" />
+    <day id="2" playernote="" cropnote="" />
+    <day id="3" playernote="" cropnote="" />
+    <day id="4" event="Jas" playernote="" cropnote="" />
+    <day id="5" playernote="" cropnote="" />
+    <day id="6" playernote="" cropnote="" />
+    <day id="7" playernote="" cropnote="" />
+    <day id="8" event="Gus" playernote="" cropnote="" />
+    <day id="9" playernote="" cropnote="" />
+    <day id="10" event="Maru" playernote="" cropnote="" />
+    <day id="11" event="Luau" playernote="" cropnote="" />
+    <day id="12" playernote="" cropnote="" />
+    <day id="13" event="Alex" playernote="" cropnote="" />
+    <day id="14" playernote="" cropnote="" />
+    <day id="15" playernote="" cropnote="" />
+    <day id="16" playernote="" cropnote="" />
+    <day id="17" event="Sam" playernote="" cropnote="" />
+    <day id="18" playernote="" cropnote="" />
+    <day id="19" event="Demetrius" playernote="" cropnote="" />
+    <day id="20" playernote="" cropnote="" />
+    <day id="21" playernote="" cropnote="" />
+    <day id="22" event="Dwarf" playernote="" cropnote="" />
+    <day id="23" playernote="" cropnote="" />
+    <day id="24" event="Willy" playernote="" cropnote="" />
+    <day id="25" playernote="" cropnote="" />
+    <day id="26" playernote="" cropnote="" />
+    <day id="27" playernote="" cropnote="" />
+    <day id="28" event="Dance of the Moonlight Jellies" playernote="" cropnote="" />
+  </summer>
+  <fall>
+    <day id="1" playernote="" cropnote="" />
+    <day id="2" event="Penny" playernote="" cropnote="" />
+    <day id="3" playernote="" cropnote="" />
+    <day id="4" playernote="" cropnote="" />
+    <day id="5" event="Elliott" playernote="" cropnote="" />
+    <day id="6" playernote="" cropnote="" />
+    <day id="7" playernote="" cropnote="" />
+    <day id="8" playernote="" cropnote="" />
+    <day id="9" playernote="" cropnote="" />
+    <day id="10" playernote="" cropnote="" />
+    <day id="11" event="Jodi" playernote="" cropnote="" />
+    <day id="12" playernote="" cropnote="" />
+    <day id="13" event="Abigail" playernote="" cropnote="" />
+    <day id="14" playernote="" cropnote="" />
+    <day id="15" event="Sandy" playernote="" cropnote="" />
+    <day id="16" event="Stardew Valley Fair" playernote="" cropnote="" />
+    <day id="17" playernote="" cropnote="" />
+    <day id="18" event="Marnie" playernote="" cropnote="" />
+    <day id="19" playernote="" cropnote="" />
+    <day id="20" playernote="" cropnote="" />
+    <day id="21" event="Robin" playernote="" cropnote="" />
+    <day id="22" playernote="" cropnote="" />
+    <day id="23" playernote="" cropnote="" />
+    <day id="24" event="George" playernote="" cropnote="" />
+    <day id="25" playernote="" cropnote="" />
+    <day id="26" playernote="" cropnote="" />
+    <day id="27" event="Spirit's Eve" playernote="" cropnote="" />
+    <day id="28" playernote="" cropnote="" />
+  </fall>
+  <winter>
+    <day id="1" event="Krobus" playernote="" cropnote="" />
+    <day id="2" playernote="" cropnote="" />
+    <day id="3" event="Linus" playernote="" cropnote="" />
+    <day id="4" playernote="" cropnote="" />
+    <day id="5" playernote="" cropnote="" />
+    <day id="6" playernote="" cropnote="" />
+    <day id="7" event="Caroline" playernote="" cropnote="" />
+    <day id="8" event="Festival of Ice" playernote="" cropnote="" />
+    <day id="9" playernote="" cropnote="" />
+    <day id="10" event="Sebastian" playernote="" cropnote="" />
+    <day id="11" playernote="" cropnote="" />
+    <day id="12" playernote="" cropnote="" />
+    <day id="13" playernote="" cropnote="" />
+    <day id="14" event="Harvey" playernote="" cropnote="" />
+    <day id="15" playernote="" cropnote="" />
+    <day id="16" playernote="" cropnote="" />
+    <day id="17" event="Wizard" playernote="" cropnote="" />
+    <day id="18" playernote="" cropnote="" />
+    <day id="19" playernote="" cropnote="" />
+    <day id="20" event="Evelyn" playernote="" cropnote="" />
+    <day id="21" playernote="" cropnote="" />
+    <day id="22" playernote="" cropnote="" />
+    <day id="23" event="Leah" playernote="" cropnote="" />
+    <day id="24" playernote="" cropnote="" />
+    <day id="25" event="Feast of the Winter Star" playernote="" cropnote="" />
+    <day id="26" event="Clint" playernote="" cropnote="" />
+    <day id="27" playernote="" cropnote="" />
+    <day id="28" playernote="" cropnote="" />
+  </winter>
+  <crops>
+    <crop name="Amaranth" days="7" cont="" season="fall" icononyield="False" />
+    <crop name="Ancient_Fruit" days="28" cont="7" season="spring,summer,fall" icononyield="False" />
+    <crop name="Artichoke" days="8" cont="" season="fall" icononyield="False" />
+    <crop name="Beet" days="6" cont="" season="fall" icononyield="False" />
+    <crop name="Blueberry" days="13" cont="4" season="summer" icononyield="False" />
+    <crop name="Blue_Jazz" days="7" cont="" season="spring" icononyield="False" />
+    <crop name="Bok_Choy" days="4" cont="" season="fall" icononyield="False" />
+    <crop name="Cauliflower" days="12" cont="" season="spring" icononyield="False" />
+    <crop name="Coffee_Bean" days="10" cont="2"  season="spring,summer" icononyield="False" />
+    <crop name="Corn" days="14" cont="4" season="summer,fall" icononyield="False" />
+    <crop name="Cranberries" days="7" cont="5" season="fall" icononyield="False" />
+    <crop name="Eggplant" days="5" cont="5" season="fall" icononyield="False" />
+    <crop name="Fairy_Rose" days="12" cont="" season="fall" icononyield="False" />
+    <crop name="Garlic" days="4" cont="" season="spring" icononyield="False" />
+    <crop name="Grape" days="10" cont="3" season="fall" icononyield="False" />
+    <crop name="Green_Bean" days="10" cont="3" season="spring" icononyield="False" />
+    <crop name="Hops" days="11" cont="1" season="summer" icononyield="False" />
+    <crop name="Hot_Pepper" days="5" cont="3" season="summer" icononyield="False" />
+    <crop name="Kale" days="6" cont="" season="spring" icononyield="False" />
+    <crop name="Melon" days="12" cont="" season="summer" icononyield="False" />
+    <crop name="Parsnip" days="4" cont="" season="spring" icononyield="False" />
+    <crop name="Poppy" days="7" cont="" season="summer" icononyield="False" />
+    <crop name="Potato" days="6" cont="" season="spring" icononyield="False" />
+    <crop name="Pumpkin" days="13" cont="" season="fall" icononyield="False" />
+    <crop name="Radish" days="6" cont="" season="summer" icononyield="False" />
+    <crop name="Red_Cabbage" days="9" cont="" season="summer" icononyield="False" />
+    <crop name="Rhubarb" days="13" cont="" season="spring" icononyield="False" />
+    <crop name="Starfruit" days="13" cont="" season="summer" icononyield="False" />
+    <crop name="Strawberry" days="8" cont="4" season="spring" icononyield="False" />
+    <crop name="Summer_Spangle" days="8" cont="" season="summer" icononyield="False" />
+    <crop name="Sunflower" days="8" cont="" season="summer,fall" icononyield="False" />
+    <crop name="Sweet_Gem_Berry" days="24" cont="" season="fall" icononyield="False" />
+    <crop name="Tomato" days="11" cont="4" season="summer" icononyield="False" />
+    <crop name="Tulip" days="6" cont="" season="spring" icononyield="False" />
+    <crop name="Wheat" days="4" cont="" season="summer,fall" icononyield="False" />
+    <crop name="Yam" days="10" cont="" season="fall" icononyield="False" />
+  </crops>
+</calendar>

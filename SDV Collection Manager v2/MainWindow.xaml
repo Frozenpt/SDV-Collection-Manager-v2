@@ -1,0 +1,2147 @@
+﻿<Window x:Name="Manager"
+        x:Class="SDV_Collection_Manager_v2.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:SDV_Collection_Manager_v2"
+        xmlns:managers="clr-namespace:Managers"
+        xmlns:commands="clr-namespace:Commands"
+        xmlns:ag="clr-namespace:WpfAutoGrid;assembly=WpfAutoGrid"
+        Title="Stardew Valley Manager"
+        SizeToContent="WidthAndHeight"
+        ResizeMode="CanMinimize"
+        WindowStartupLocation="CenterScreen"
+        Closing="Window_Closing"
+        Cursor="Hand"
+        BorderThickness="0"
+        Background="#02727272"
+        AllowsTransparency="True"
+        WindowStyle="None">
+    <Window.Resources>
+        <managers:CollectionsXMLManager x:Key="collections" />
+        <managers:CalendarManager x:Key="calendar" />
+        <managers:OptionsMenu x:Key="options" />
+        <managers:FarmManager x:Key="farmManager" />
+        <!--Options Tab Image-->
+        <BitmapImage x:Key="optionsMenuTab"
+                     UriSource="images/Options.png" />
+        <BitmapImage x:Key="resetIcon"
+                     UriSource="images/reset.png" />
+        <BitmapImage x:Key="closeIcon"
+                     UriSource="images/close.png" />
+        <BitmapImage x:Key="minimizeIcon"
+                     UriSource="images/minimize.png" />
+        <BitmapImage x:Key="helpIcon"
+                     UriSource="images/help.png" />
+
+        <!--#region Collection Tab Images -->
+        <BitmapImage x:Key="shippedItemsTab"
+                     UriSource="images/tabitems/shippeditemsTabImg.png" />
+        <BitmapImage x:Key="fishingTab"
+                     UriSource="images/tabitems/fishingTabImg.png" />
+        <BitmapImage x:Key="artifactsTab"
+                     UriSource="images/tabitems/artifactsTabImg.png" />
+        <BitmapImage x:Key="mineralsTab"
+                     UriSource="images/tabitems/mineralsTabImg.png" />
+        <BitmapImage x:Key="cookingTab"
+                     UriSource="images/tabitems/cookingTabImg.png" />
+        <!--#endregion-->
+        <!--#region Brushes-->
+        <SolidColorBrush x:Key="RedBrush"
+                         Color="Red" />
+        <SolidColorBrush x:Key="SolidBorderBrush"
+                         Color="#FFB14E05" />
+        <SolidColorBrush x:Key="UnselectedBackground"
+                         Color="#FFF0AF6A" />
+        <SolidColorBrush x:Key="SelectedBackGround"
+                         Color="#FFDE8A32" />
+        <SolidColorBrush x:Key="CalendarBackground"
+                         Color="#FFFBEBC2" />
+        <SolidColorBrush x:Key="CalendarBackgroundNote"
+                         Color="#FFC3E29C" />
+        <SolidColorBrush x:Key="SpringSelected"
+                         Color="#FF60FF30" />
+        <SolidColorBrush x:Key="SpringUnselected"
+                         Color="#FF2B742C" />
+        <SolidColorBrush x:Key="SummerSelected"
+                         Color="#FFFFAC00" />
+        <SolidColorBrush x:Key="SummerUnselected"
+                         Color="#FFA47229" />
+        <SolidColorBrush x:Key="FallSelected"
+                         Color="#FFEA45E0" />
+        <SolidColorBrush x:Key="FallUnselected"
+                         Color="#FF853560" />
+        <SolidColorBrush x:Key="WinterSelected"
+                         Color="#FF46C7FF" />
+        <SolidColorBrush x:Key="WinterUnselected"
+                         Color="#FF3E68A0" />
+        <!--#endregion-->
+        <!--Collection TabItem Styles-->
+        <Style x:Key="generalTab"
+               TargetType="{x:Type TabItem}">
+            <Setter Property="Template">
+                <Setter.Value>
+                    <ControlTemplate TargetType="{x:Type TabItem}">
+                        <Grid>
+                            <Border Name="Border"
+                                    Margin="0,0,0,-3"
+                                    Background="{StaticResource UnselectedBackground}"
+                                    BorderBrush="{StaticResource  SolidBorderBrush}"
+                                    BorderThickness="1,1,1,1"
+                                    CornerRadius="5,0,0,5"
+                                    Height="35"
+                                    Width="Auto">
+                                <ContentPresenter x:Name="ContentSite"
+                                                  VerticalAlignment="Center"
+                                                  HorizontalAlignment="Center"
+                                                  ContentSource="Header"
+                                                  Margin="10,2,10,2"
+                                                  RecognizesAccessKey="True" />
+                            </Border>
+                        </Grid>
+                        <ControlTemplate.Triggers>
+                            <Trigger Property="IsSelected"
+                                     Value="True">
+                                <Setter Property="Panel.ZIndex"
+                                        Value="50" />
+                                <Setter TargetName="Border"
+                                        Property="Background"
+                                        Value="{StaticResource SelectedBackGround}" />
+                                <Setter TargetName="Border"
+                                        Property="BorderThickness"
+                                        Value="2,2,2,2" />
+                            </Trigger>
+                        </ControlTemplate.Triggers>
+                    </ControlTemplate>
+                </Setter.Value>
+            </Setter>
+        </Style>
+        <!--Spring TabItems-->
+        <Style x:Key="spring"
+               TargetType="{x:Type TabItem}">
+            <Setter Property="Template">
+                <Setter.Value>
+                    <ControlTemplate TargetType="{x:Type TabItem}">
+                        <Grid>
+                            <Border Name="Border"
+                                    Margin="0,0,1,-1"
+                                    Background="{StaticResource SpringUnselected}"
+                                    BorderBrush="{StaticResource  SpringSelected}"
+                                    BorderThickness="1,1,1,1"
+                                    CornerRadius="1,1,1,1"
+                                    Height="35"
+                                    Width="Auto">
+                                <ContentPresenter x:Name="ContentSite"
+                                                  VerticalAlignment="Center"
+                                                  HorizontalAlignment="Center"
+                                                  ContentSource="Header"
+                                                  Margin="10,2,10,2"
+                                                  RecognizesAccessKey="True" />
+                            </Border>
+                        </Grid>
+                        <ControlTemplate.Triggers>
+                            <Trigger Property="IsSelected"
+                                     Value="True">
+                                <Setter Property="Panel.ZIndex"
+                                        Value="50" />
+                                <Setter TargetName="Border"
+                                        Property="Background"
+                                        Value="{StaticResource SpringSelected}" />
+                                <Setter TargetName="Border"
+                                        Property="BorderThickness"
+                                        Value="2,2,2,2" />
+                            </Trigger>
+                        </ControlTemplate.Triggers>
+                    </ControlTemplate>
+                </Setter.Value>
+            </Setter>
+        </Style>
+        <!--Summer TabItems-->
+        <Style x:Key="summer"
+               TargetType="{x:Type TabItem}">
+            <Setter Property="Template">
+                <Setter.Value>
+                    <ControlTemplate TargetType="{x:Type TabItem}">
+                        <Grid>
+                            <Border Name="Border"
+                                    Margin="1,0,1,-1"
+                                    Background="{StaticResource SummerUnselected}"
+                                    BorderBrush="{StaticResource  SummerSelected}"
+                                    BorderThickness="1,1,1,1"
+                                    CornerRadius="1,1,1,1"
+                                    Height="35"
+                                    Width="Auto">
+                                <ContentPresenter x:Name="ContentSite"
+                                                  VerticalAlignment="Center"
+                                                  HorizontalAlignment="Center"
+                                                  ContentSource="Header"
+                                                  Margin="10,2,10,2"
+                                                  RecognizesAccessKey="True" />
+                            </Border>
+                        </Grid>
+                        <ControlTemplate.Triggers>
+                            <Trigger Property="IsSelected"
+                                     Value="True">
+                                <Setter Property="Panel.ZIndex"
+                                        Value="50" />
+                                <Setter TargetName="Border"
+                                        Property="Background"
+                                        Value="{StaticResource SummerSelected}" />
+                                <Setter TargetName="Border"
+                                        Property="BorderThickness"
+                                        Value="2,2,2,2" />
+                            </Trigger>
+                        </ControlTemplate.Triggers>
+                    </ControlTemplate>
+                </Setter.Value>
+            </Setter>
+        </Style>
+        <!--Fall TabItems-->
+        <Style x:Key="fall"
+               TargetType="{x:Type TabItem}">
+            <Setter Property="Template">
+                <Setter.Value>
+                    <ControlTemplate TargetType="{x:Type TabItem}">
+                        <Grid>
+                            <Border Name="Border"
+                                    Margin="1,0,1,-1"
+                                    Background="{StaticResource FallUnselected}"
+                                    BorderBrush="{StaticResource  FallSelected}"
+                                    BorderThickness="1,1,1,1"
+                                    CornerRadius="1,1,1,1"
+                                    Height="35"
+                                    Width="Auto">
+                                <ContentPresenter x:Name="ContentSite"
+                                                  VerticalAlignment="Center"
+                                                  HorizontalAlignment="Center"
+                                                  ContentSource="Header"
+                                                  Margin="10,2,10,2"
+                                                  RecognizesAccessKey="True" />
+                            </Border>
+                        </Grid>
+                        <ControlTemplate.Triggers>
+                            <Trigger Property="IsSelected"
+                                     Value="True">
+                                <Setter Property="Panel.ZIndex"
+                                        Value="50" />
+                                <Setter TargetName="Border"
+                                        Property="Background"
+                                        Value="{StaticResource FallSelected}" />
+                                <Setter TargetName="Border"
+                                        Property="BorderThickness"
+                                        Value="2,2,2,2" />
+                            </Trigger>
+                        </ControlTemplate.Triggers>
+                    </ControlTemplate>
+                </Setter.Value>
+            </Setter>
+        </Style>
+        <!--Winter TabItems-->
+        <Style x:Key="winter"
+               TargetType="{x:Type TabItem}">
+            <Setter Property="Template">
+                <Setter.Value>
+                    <ControlTemplate TargetType="{x:Type TabItem}">
+                        <Grid>
+                            <Border Name="Border"
+                                    Margin="1,0,0,-1"
+                                    Background="{StaticResource WinterUnselected}"
+                                    BorderBrush="{StaticResource  WinterSelected}"
+                                    BorderThickness="1,1,1,1"
+                                    CornerRadius="1,1,1,1"
+                                    Height="35"
+                                    Width="Auto">
+                                <ContentPresenter x:Name="ContentSite"
+                                                  VerticalAlignment="Center"
+                                                  HorizontalAlignment="Center"
+                                                  ContentSource="Header"
+                                                  Margin="10,2,10,2"
+                                                  RecognizesAccessKey="True" />
+                            </Border>
+                        </Grid>
+                        <ControlTemplate.Triggers>
+                            <Trigger Property="IsSelected"
+                                     Value="True">
+                                <Setter Property="Panel.ZIndex"
+                                        Value="50" />
+                                <Setter TargetName="Border"
+                                        Property="Background"
+                                        Value="{StaticResource WinterSelected}" />
+                                <Setter TargetName="Border"
+                                        Property="BorderThickness"
+                                        Value="2,2,2,2" />
+                            </Trigger>
+                        </ControlTemplate.Triggers>
+                    </ControlTemplate>
+                </Setter.Value>
+            </Setter>
+        </Style>
+        <!--Search box placeholder text-->
+        <Style x:Key="placeHolder"
+               TargetType="{x:Type TextBox}"
+               BasedOn="{StaticResource {x:Type TextBox}}">
+            <Setter Property="Template">
+                <Setter.Value>
+                    <ControlTemplate TargetType="{x:Type TextBox}">
+                        <Grid>
+                            <TextBox Text="{Binding Path=Text,
+												RelativeSource={RelativeSource TemplatedParent}, 
+												Mode=TwoWay,
+												UpdateSourceTrigger=PropertyChanged}"
+                                     x:Name="searchitem"
+                                     Background="Transparent"
+                                     Panel.ZIndex="2" />
+                            <TextBox Text="{TemplateBinding Tag}"
+                                     Background="{TemplateBinding Background}"
+                                     Panel.ZIndex="1">
+                                <TextBox.Style>
+                                    <Style TargetType="{x:Type TextBox}">
+                                        <Setter Property="Foreground"
+                                                Value="Transparent" />
+                                        <Style.Triggers>
+                                            <DataTrigger Binding="{Binding Path=Text, Source={x:Reference searchitem}}"
+                                                         Value="">
+                                                <Setter Property="Foreground"
+                                                        Value="LightGray" />
+                                            </DataTrigger>
+                                        </Style.Triggers>
+                                    </Style>
+                                </TextBox.Style>
+                            </TextBox>
+                        </Grid>
+                    </ControlTemplate>
+                </Setter.Value>
+            </Setter>
+        </Style>
+        <!--Calendar Column Headers-->
+        <Style TargetType="{x:Type ColumnDefinition}">
+            <Setter Property="Width"
+                    Value="100" />
+        </Style>
+        <!--Calendar Day Buttons-->
+        <Style TargetType="{x:Type ToggleButton}">
+            <Setter Property="Background"
+                    Value="{StaticResource CalendarBackgroundNote}" />
+            <Style.Triggers>
+                <MultiDataTrigger>
+                    <MultiDataTrigger.Conditions>
+                        <Condition Binding="{Binding Path=PlayerNote}" 
+                                   Value=""/>
+                        <Condition Binding="{Binding Path=CropNote}"
+                                   Value="" />
+                    </MultiDataTrigger.Conditions>
+                    <Setter Property="Background"
+                            Value="{StaticResource CalendarBackground}" />
+                </MultiDataTrigger>
+            </Style.Triggers>
+        </Style>
+        <!--GroupBox-->
+        <BorderGapMaskConverter x:Key="BorderGapMaskConverter" />
+        <Style x:Key="{x:Type GroupBox}"
+               TargetType="{x:Type GroupBox}">
+            <Setter Property="BorderBrush"
+                    Value="Gray" />
+            <Setter Property="Foreground"
+                    Value="Black" />
+            <Setter Property="BorderThickness"
+                    Value="1" />
+            <Setter Property="Template">
+                <Setter.Value>
+                    <ControlTemplate TargetType="{x:Type GroupBox}">
+                        <Grid>
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="4" />
+                                <ColumnDefinition Width="Auto" />
+                                <ColumnDefinition Width="*" />
+                                <ColumnDefinition Width="4" />
+                            </Grid.ColumnDefinitions>
+                            <Grid.RowDefinitions>
+                                <RowDefinition Height="Auto" />
+                                <RowDefinition Height="Auto" />
+                                <RowDefinition Height="*" />
+                                <RowDefinition Height="4" />
+                            </Grid.RowDefinitions>
+                            <Border CornerRadius="4"
+                                    Grid.Row="1"
+                                    Grid.RowSpan="3"
+                                    Grid.Column="0"
+                                    Grid.ColumnSpan="4"
+                                    BorderThickness="{TemplateBinding BorderThickness}"
+                                    BorderBrush="Transparent"
+                                    Background="{TemplateBinding Background}" />
+                            <!-- ContentPresenter for the header -->
+                            <Border x:Name="Header"
+                                    Padding="6,0,6,0"
+                                    Grid.Row="0"
+                                    Grid.RowSpan="2"
+                                    Grid.Column="1">
+                                <ContentPresenter ContentSource="Header"
+                                                  RecognizesAccessKey="True" />
+                            </Border>
+                            <!-- Primary content for GroupBox -->
+                            <ContentPresenter Grid.Row="2"
+                                              Grid.Column="1"
+                                              Grid.ColumnSpan="2"
+                                              Margin="{TemplateBinding Padding}" />
+                            <Border CornerRadius="0"
+                                    Grid.Row="1"
+                                    Grid.RowSpan="3"
+                                    Grid.ColumnSpan="4"
+                                    BorderThickness="{TemplateBinding BorderThickness}"
+                                    BorderBrush="{TemplateBinding BorderBrush}">
+                                <Border.OpacityMask>
+                                    <MultiBinding Converter="{StaticResource BorderGapMaskConverter}"
+                                                  ConverterParameter="6">
+                                        <Binding ElementName="Header"
+                                                 Path="ActualWidth" />
+                                        <Binding RelativeSource="{RelativeSource Self}"
+                                                 Path="ActualWidth" />
+                                        <Binding RelativeSource="{RelativeSource Self}"
+                                                 Path="ActualHeight" />
+                                    </MultiBinding>
+                                </Border.OpacityMask>
+                            </Border>
+                        </Grid>
+                    </ControlTemplate>
+                </Setter.Value>
+            </Setter>
+        </Style>
+    </Window.Resources>
+    <DockPanel>
+        <TabControl Name="MainTab"
+                    Background="#02000000"
+                    BorderBrush="{x:Null}"
+                    SelectedIndex="1"
+                    DockPanel.Dock="Bottom">
+            <TabItem Name="Options"
+                     BorderBrush="Black"
+                     BorderThickness="1"
+                     Background="White"
+                     Margin="0,0,0,-2">
+                <TabItem.Header>
+                    <Image Source="{Binding Source={StaticResource optionsMenuTab}}"
+                           Width="22"
+                           Height="20" />
+                </TabItem.Header>
+                <Border BorderBrush="{Binding Mode=OneWay, Source={StaticResource SolidBorderBrush}}"
+                        BorderThickness="2"
+                        Margin="0,0.5,0,0"
+                        MinWidth="350"
+                        MinHeight="350">
+                    <StackPanel Background="{Binding Mode=OneWay, Source={StaticResource UnselectedBackground}}">
+                        <GroupBox Header="Calendar Options"
+                                  FontWeight="Bold"
+                                  BorderThickness="1.5"
+                                  BorderBrush="{Binding Mode=OneWay, Source={StaticResource SolidBorderBrush}}">
+                            <StackPanel>
+                                <CheckBox Content="Greenhouse Mode"
+                                          ToolTip="Allow non-season crops to be planted in all seasons."
+                                          FontWeight="Normal"
+                                          IsChecked="{Binding GreenHouseMode, Source={StaticResource options}}" />
+                                <CheckBox Content="Crop icon on yielding day"
+                                          ToolTip="Display the planted crop icon on yielding day instead."
+                                          FontWeight="Normal"
+                                          IsChecked="{Binding IconOnYield, Source={StaticResource options}}" />
+                            </StackPanel>
+                        </GroupBox>
+                    </StackPanel>
+                </Border>
+            </TabItem>
+            <TabItem Header="Collections"
+                     x:Name="tabItem"
+                     Width="Auto"
+                     Style="{Binding Source={StaticResource generalTab}}">
+                <StackPanel>
+                    <TextBox Name="searchitem"
+                             Style="{StaticResource placeHolder}"
+                             Tag="Search item..."
+                             Text="{Binding Search, Source={StaticResource collections}, UpdateSourceTrigger=PropertyChanged}"
+                             BorderThickness="2"
+                             Margin="0"
+                             Background="White"
+                             ToolTip="{Binding searchTooltip, Source={StaticResource collections}}" />
+                    <TabControl x:Name="Collections"
+                                BorderBrush="{Binding Mode=OneWay, Source={StaticResource SolidBorderBrush}}"
+                                BorderThickness="4,4,4,4"
+                                Background="{Binding Mode=OneWay, Source={StaticResource UnselectedBackground}}"
+                                TabStripPlacement="Left"
+                                Width="Auto"
+                                Height="Auto"
+                                HorizontalAlignment="Stretch"
+                                VerticalAlignment="Stretch">
+                        <TabItem x:Name="ShippedItems"
+                                 Style="{Binding Source={StaticResource generalTab}}"
+                                 PreviewMouseWheel="ShippedItems_PreviewMouseWheel">
+                            <TabItem.Header>
+                                <Image x:Name="shippeditemsTab"
+                                       Source="{Binding Mode=OneWay, Source={StaticResource shippedItemsTab}}"
+                                       HorizontalAlignment="Left"
+                                       VerticalAlignment="Top"
+                                       Width="33"
+                                       Height="21" />
+                            </TabItem.Header>
+                            <Grid>
+                                <TabControl x:Name="Pages"
+                                            BorderBrush="{Binding Mode=OneWay, Source={StaticResource SolidBorderBrush}}"
+                                            BorderThickness="4,4,4,4"
+                                            Background="{Binding Mode=OneWay, Source={StaticResource UnselectedBackground}}"
+                                            TabStripPlacement="Top"
+                                            Width="Auto"
+                                            Height="Auto"
+                                            HorizontalAlignment="Stretch"
+                                            VerticalAlignment="Stretch">
+                                    <TabItem x:Name="PageOne"
+                                             Header="Page One"
+                                             HorizontalContentAlignment="Stretch"
+                                             Margin="0"
+                                             FontFamily="Stardew Valley"
+                                             FontSize="18"
+                                             Style="{Binding Source={StaticResource generalTab}}">
+                                        <ItemsControl ItemsSource="{Binding PageOneCollection, Source={StaticResource collections}}"
+                                                      Width="540"
+                                                      ScrollViewer.HorizontalScrollBarVisibility="Disabled"
+                                                      Margin="0">
+                                            <ItemsControl.ItemTemplate>
+                                                <DataTemplate>
+                                                    <TextBlock>
+                                                        <TextBlock.InputBindings>
+                                                            <MouseBinding Command="{Binding _openWebpage, Source={StaticResource collections}}"
+                                                                          MouseAction="MiddleClick"
+                                                                          CommandParameter="{Binding Mode=OneWay}" />
+                                                        </TextBlock.InputBindings>
+												<Hyperlink Command="{Binding _updateItem, Source={StaticResource collections}}"
+                                                           CommandParameter="{Binding Mode=OneWay}"
+                                                           TextDecorations="{x:Null}">
+											<Image HorizontalAlignment="Left"
+                                                            Width="50"
+                                                            Height="50"
+                                                            VerticalAlignment="Top"
+                                                            ToolTip="{Binding Name}"
+                                                            Margin="2,2,1,1"
+                                                            Source="{Binding Img}">
+												<Image.Style>
+													<Style TargetType="{x:Type Image}">
+														<Style.Triggers>
+															<DataTrigger Value="True"
+                                                                            Binding="{Binding Status, UpdateSourceTrigger=PropertyChanged}">
+																<Setter Property="Opacity"
+                                                                                Value="1" />
+																<Setter Property="Effect">
+																	<Setter.Value>
+																		<DropShadowEffect Opacity="0.5"
+                                                                                          Direction="225"
+                                                                                          ShadowDepth="4"
+                                                                                          BlurRadius="5" />
+																	</Setter.Value>
+																</Setter>
+															</DataTrigger>
+															<DataTrigger Binding="{Binding Status, UpdateSourceTrigger=PropertyChanged}"
+                                                                            Value="False">
+																<Setter Property="Opacity"
+                                                                                Value="0.4" />
+																<Setter Property="Effect">
+																	<Setter.Value>
+																		<DropShadowEffect Opacity="0.2"
+                                                                                          Direction="225"
+                                                                                          ShadowDepth="4"
+                                                                                          BlurRadius="5" />
+																	</Setter.Value>
+																</Setter>
+															</DataTrigger>
+														</Style.Triggers>
+													</Style>
+												</Image.Style>
+											</Image>
+												</Hyperlink>
+                                                    </TextBlock>
+                                                </DataTemplate>
+                                            </ItemsControl.ItemTemplate>
+                                            <ItemsControl.ItemsPanel>
+                                                <ItemsPanelTemplate>
+                                                    <WrapPanel Orientation="Horizontal" />
+                                                </ItemsPanelTemplate>
+                                            </ItemsControl.ItemsPanel>
+                                        </ItemsControl>
+                                    </TabItem>
+                                    <TabItem x:Name="PageTwo"
+                                             Header="Page Two"
+                                             HorizontalContentAlignment="Stretch"
+                                             Margin="0"
+                                             FontFamily="Stardew Valley"
+                                             FontSize="18"
+                                             Style="{Binding Source={StaticResource generalTab}}">
+                                        <ItemsControl Width="540"
+                                                      ScrollViewer.HorizontalScrollBarVisibility="Disabled"
+                                                      Margin="0"
+                                                      ItemsSource="{Binding PageTwoCollection, Source={StaticResource collections}}">
+                                            <ItemsControl.ItemTemplate>
+                                                <DataTemplate>
+                                                    <TextBlock>
+                                                        <TextBlock.InputBindings>
+                                                            <MouseBinding Command="{Binding _openWebpage, Source={StaticResource collections}}"
+                                                                          MouseAction="MiddleClick"
+                                                                          CommandParameter="{Binding Mode=OneWay}" />
+                                                        </TextBlock.InputBindings>
+												<Hyperlink Command="{Binding _updateItem, Source={StaticResource collections}}"
+                                                           CommandParameter="{Binding Mode=OneWay}"
+                                                           TextDecorations="{x:Null}">
+											<Image HorizontalAlignment="Left"
+                                                            Width="50"
+                                                            Height="50"
+                                                            VerticalAlignment="Top"
+                                                            ToolTip="{Binding Name}"
+                                                            Margin="2,2,1,1"
+                                                            Source="{Binding Img}">
+												<Image.Style>
+													<Style TargetType="{x:Type Image}">
+														<Style.Triggers>
+															<DataTrigger Value="True"
+                                                                            Binding="{Binding Status, UpdateSourceTrigger=PropertyChanged}">
+																<Setter Property="Opacity"
+                                                                                Value="1" />
+																<Setter Property="Effect">
+																	<Setter.Value>
+																		<DropShadowEffect Opacity="0.5"
+                                                                                          Direction="225"
+                                                                                          ShadowDepth="4"
+                                                                                          BlurRadius="5" />
+																	</Setter.Value>
+																</Setter>
+															</DataTrigger>
+															<DataTrigger Binding="{Binding Status, UpdateSourceTrigger=PropertyChanged}"
+                                                                            Value="False">
+																<Setter Property="Opacity"
+                                                                                Value="0.4" />
+																<Setter Property="Effect">
+																	<Setter.Value>
+																		<DropShadowEffect Opacity="0.2"
+                                                                                          Direction="225"
+                                                                                          ShadowDepth="4"
+                                                                                          BlurRadius="5" />
+																	</Setter.Value>
+																</Setter>
+															</DataTrigger>
+														</Style.Triggers>
+													</Style>
+												</Image.Style>
+											</Image>
+												</Hyperlink>
+                                                    </TextBlock>
+                                                </DataTemplate>
+                                            </ItemsControl.ItemTemplate>
+                                            <ItemsControl.ItemsPanel>
+                                                <ItemsPanelTemplate>
+                                                    <WrapPanel Orientation="Horizontal" />
+                                                </ItemsPanelTemplate>
+                                            </ItemsControl.ItemsPanel>
+                                        </ItemsControl>
+                                    </TabItem>
+                                </TabControl>
+                            </Grid>
+                        </TabItem>
+                        <TabItem x:Name="Fishing"
+                                 Style="{Binding Source={StaticResource generalTab}}">
+                            <TabItem.Header>
+                                <Image x:Name="fishTab"
+                                       Source="{Binding Mode=OneWay, Source={StaticResource fishingTab}}"
+                                       HorizontalAlignment="Left"
+                                       VerticalAlignment="Top"
+                                       Width="33"
+                                       Height="21" />
+                            </TabItem.Header>
+                            <ItemsControl Width="540"
+                                          ItemsSource="{Binding FishCollection, Source={StaticResource collections}}"
+                                          ScrollViewer.HorizontalScrollBarVisibility="Disabled"
+                                          Margin="0">
+                                <ItemsControl.ItemTemplate>
+                                    <DataTemplate>
+                                        <TextBlock>
+                                            <TextBlock.InputBindings>
+                                                <MouseBinding Command="{Binding _openWebpage, Source={StaticResource collections}}"
+                                                              MouseAction="MiddleClick"
+                                                              CommandParameter="{Binding Mode=OneWay}" />
+                                            </TextBlock.InputBindings>
+												<Hyperlink Command="{Binding _updateItem, Source={StaticResource collections}}"
+                                                           CommandParameter="{Binding Mode=OneWay}"
+                                                           TextDecorations="{x:Null}">
+											<Image HorizontalAlignment="Left"
+                                                   Width="50"
+                                                   Height="50"
+                                                   VerticalAlignment="Top"
+                                                   ToolTip="{Binding Name}"
+                                                   Margin="2,2,1,1"
+                                                   Source="{Binding Img}">
+												<Image.Style>
+													<Style TargetType="{x:Type Image}">
+														<Style.Triggers>
+															<DataTrigger Value="True"
+                                                                         Binding="{Binding Status, UpdateSourceTrigger=PropertyChanged}">
+																<Setter Property="Opacity"
+                                                                        Value="1" />
+																<Setter Property="Effect">
+																	<Setter.Value>
+																		<DropShadowEffect Opacity="0.5"
+                                                                                          Direction="225"
+                                                                                          ShadowDepth="4"
+                                                                                          BlurRadius="5" />
+																	</Setter.Value>
+																</Setter>
+															</DataTrigger>
+															<DataTrigger Binding="{Binding Status, UpdateSourceTrigger=PropertyChanged}"
+                                                                         Value="False">
+																<Setter Property="Opacity"
+                                                                        Value="0.4" />
+																<Setter Property="Effect">
+																	<Setter.Value>
+																		<DropShadowEffect Opacity="0.2"
+                                                                                          Direction="225"
+                                                                                          ShadowDepth="4"
+                                                                                          BlurRadius="5" />
+																	</Setter.Value>
+																</Setter>
+															</DataTrigger>
+														</Style.Triggers>
+													</Style>
+												</Image.Style>
+											</Image>
+												</Hyperlink>
+                                        </TextBlock>
+                                    </DataTemplate>
+                                </ItemsControl.ItemTemplate>
+                                <ItemsControl.ItemsPanel>
+                                    <ItemsPanelTemplate>
+                                        <WrapPanel Orientation="Horizontal" />
+                                    </ItemsPanelTemplate>
+                                </ItemsControl.ItemsPanel>
+                            </ItemsControl>
+                        </TabItem>
+                        <TabItem x:Name="Artifacts"
+                                 Style="{Binding Source={StaticResource generalTab}}">
+                            <TabItem.Header>
+                                <Image x:Name="artifactsTab"
+                                       Source="{Binding Mode=OneWay, Source={StaticResource artifactsTab}}"
+                                       HorizontalAlignment="Left"
+                                       VerticalAlignment="Top"
+                                       Width="33"
+                                       Height="21" />
+                            </TabItem.Header>
+                            <ItemsControl Width="540"
+                                          ItemsSource="{Binding ArtifactCollection, Source={StaticResource collections}}"
+                                          ScrollViewer.HorizontalScrollBarVisibility="Disabled"
+                                          Margin="0">
+                                <ItemsControl.ItemTemplate>
+                                    <DataTemplate>
+                                        <TextBlock>
+                                            <TextBlock.InputBindings>
+                                                <MouseBinding Command="{Binding _openWebpage, Source={StaticResource collections}}"
+                                                              MouseAction="MiddleClick"
+                                                              CommandParameter="{Binding Mode=OneWay}" />
+                                            </TextBlock.InputBindings>
+												<Hyperlink Command="{Binding _updateItem, Source={StaticResource collections}}"
+                                                           CommandParameter="{Binding Mode=OneWay}"
+                                                           TextDecorations="{x:Null}">
+											<Image HorizontalAlignment="Left"
+                                                   Width="50"
+                                                   Height="50"
+                                                   VerticalAlignment="Top"
+                                                   ToolTip="{Binding Name}"
+                                                   Margin="2,2,1,1"
+                                                   Source="{Binding Img}">
+												<Image.Style>
+													<Style TargetType="{x:Type Image}">
+														<Style.Triggers>
+															<DataTrigger Value="True"
+                                                                         Binding="{Binding Status, UpdateSourceTrigger=PropertyChanged}">
+																<Setter Property="Opacity"
+                                                                        Value="1" />
+																<Setter Property="Effect">
+																	<Setter.Value>
+																		<DropShadowEffect Opacity="0.5"
+                                                                                          Direction="225"
+                                                                                          ShadowDepth="4"
+                                                                                          BlurRadius="5" />
+																	</Setter.Value>
+																</Setter>
+															</DataTrigger>
+															<DataTrigger Binding="{Binding Status, UpdateSourceTrigger=PropertyChanged}"
+                                                                         Value="False">
+																<Setter Property="Opacity"
+                                                                        Value="0.4" />
+																<Setter Property="Effect">
+																	<Setter.Value>
+																		<DropShadowEffect Opacity="0.2"
+                                                                                          Direction="225"
+                                                                                          ShadowDepth="4"
+                                                                                          BlurRadius="5" />
+																	</Setter.Value>
+																</Setter>
+															</DataTrigger>
+														</Style.Triggers>
+													</Style>
+												</Image.Style>
+											</Image>
+												</Hyperlink>
+                                        </TextBlock>
+                                    </DataTemplate>
+                                </ItemsControl.ItemTemplate>
+                                <ItemsControl.ItemsPanel>
+                                    <ItemsPanelTemplate>
+                                        <WrapPanel Orientation="Horizontal" />
+                                    </ItemsPanelTemplate>
+                                </ItemsControl.ItemsPanel>
+                            </ItemsControl>
+                        </TabItem>
+                        <TabItem x:Name="Minerals"
+                                 Style="{Binding Source={StaticResource generalTab}}">
+                            <TabItem.Header>
+                                <Image x:Name="mineralsTab"
+                                       Source="{Binding Mode=OneWay, Source={StaticResource mineralsTab}}"
+                                       HorizontalAlignment="Left"
+                                       VerticalAlignment="Top"
+                                       Width="33"
+                                       Height="21" />
+                            </TabItem.Header>
+                            <ItemsControl Width="540"
+                                          ItemsSource="{Binding MineralCollection, Source={StaticResource collections}}"
+                                          ScrollViewer.HorizontalScrollBarVisibility="Disabled"
+                                          Margin="0">
+                                <ItemsControl.ItemTemplate>
+                                    <DataTemplate>
+                                        <TextBlock>
+                                            <TextBlock.InputBindings>
+                                                <MouseBinding Command="{Binding _openWebpage, Source={StaticResource collections}}"
+                                                              MouseAction="MiddleClick"
+                                                              CommandParameter="{Binding Mode=OneWay}" />
+                                            </TextBlock.InputBindings>
+												<Hyperlink Command="{Binding _updateItem, Source={StaticResource collections}}"
+                                                           CommandParameter="{Binding Mode=OneWay}"
+                                                           TextDecorations="{x:Null}">
+											<Image HorizontalAlignment="Left"
+                                                   Width="50"
+                                                   Height="50"
+                                                   VerticalAlignment="Top"
+                                                   ToolTip="{Binding Name}"
+                                                   Margin="2,2,1,1"
+                                                   Source="{Binding Img}">
+												<Image.Style>
+													<Style TargetType="{x:Type Image}">
+														<Style.Triggers>
+															<DataTrigger Value="True"
+                                                                         Binding="{Binding Status, UpdateSourceTrigger=PropertyChanged}">
+																<Setter Property="Opacity"
+                                                                        Value="1" />
+																<Setter Property="Effect">
+																	<Setter.Value>
+																		<DropShadowEffect Opacity="0.5"
+                                                                                          Direction="225"
+                                                                                          ShadowDepth="4"
+                                                                                          BlurRadius="5" />
+																	</Setter.Value>
+																</Setter>
+															</DataTrigger>
+															<DataTrigger Binding="{Binding Status, UpdateSourceTrigger=PropertyChanged}"
+                                                                         Value="False">
+																<Setter Property="Opacity"
+                                                                        Value="0.4" />
+																<Setter Property="Effect">
+																	<Setter.Value>
+																		<DropShadowEffect Opacity="0.2"
+                                                                                          Direction="225"
+                                                                                          ShadowDepth="4"
+                                                                                          BlurRadius="5" />
+																	</Setter.Value>
+																</Setter>
+															</DataTrigger>
+														</Style.Triggers>
+													</Style>
+												</Image.Style>
+											</Image>
+												</Hyperlink>
+                                        </TextBlock>
+                                    </DataTemplate>
+                                </ItemsControl.ItemTemplate>
+                                <ItemsControl.ItemsPanel>
+                                    <ItemsPanelTemplate>
+                                        <WrapPanel Orientation="Horizontal" />
+                                    </ItemsPanelTemplate>
+                                </ItemsControl.ItemsPanel>
+                            </ItemsControl>
+                        </TabItem>
+                        <TabItem x:Name="Cooking"
+                                 Style="{Binding Source={StaticResource generalTab}}">
+                            <TabItem.Header>
+                                <Image x:Name="cookingTab"
+                                       Source="{Binding Mode=OneWay, Source={StaticResource cookingTab}}"
+                                       HorizontalAlignment="Left"
+                                       VerticalAlignment="Top"
+                                       Width="33"
+                                       Height="21" />
+                            </TabItem.Header>
+                            <ItemsControl Width="540"
+                                          ItemsSource="{Binding CookingCollection, Source={StaticResource collections}}"
+                                          ScrollViewer.HorizontalScrollBarVisibility="Disabled"
+                                          Margin="0">
+                                <ItemsControl.ItemTemplate>
+                                    <DataTemplate>
+                                        <TextBlock>
+                                            <TextBlock.InputBindings>
+                                                <MouseBinding Command="{Binding _openWebpage, Source={StaticResource collections}}"
+                                                              MouseAction="MiddleClick"
+                                                              CommandParameter="{Binding Mode=OneWay}" />
+                                            </TextBlock.InputBindings>
+												<Hyperlink Command="{Binding _updateItem, Source={StaticResource collections}}"
+                                                           CommandParameter="{Binding Mode=OneWay}"
+                                                           TextDecorations="{x:Null}">
+											<Image HorizontalAlignment="Left"
+                                                   Width="50"
+                                                   Height="50"
+                                                   VerticalAlignment="Top"
+                                                   ToolTip="{Binding Name}"
+                                                   Margin="2,2,1,1"
+                                                   Source="{Binding Img}">
+												<Image.Style>
+													<Style TargetType="{x:Type Image}">
+														<Style.Triggers>
+															<DataTrigger Value="True"
+                                                                         Binding="{Binding Status, UpdateSourceTrigger=PropertyChanged}">
+																<Setter Property="Opacity"
+                                                                        Value="1" />
+																<Setter Property="Effect">
+																	<Setter.Value>
+																		<DropShadowEffect Opacity="0.5"
+                                                                                          Direction="225"
+                                                                                          ShadowDepth="4"
+                                                                                          BlurRadius="5" />
+																	</Setter.Value>
+																</Setter>
+															</DataTrigger>
+															<DataTrigger Binding="{Binding Status, UpdateSourceTrigger=PropertyChanged}"
+                                                                         Value="False">
+																<Setter Property="Opacity"
+                                                                        Value="0.4" />
+																<Setter Property="Effect">
+																	<Setter.Value>
+																		<DropShadowEffect Opacity="0.2"
+                                                                                          Direction="225"
+                                                                                          ShadowDepth="4"
+                                                                                          BlurRadius="5" />
+																	</Setter.Value>
+																</Setter>
+															</DataTrigger>
+														</Style.Triggers>
+													</Style>
+												</Image.Style>
+											</Image>
+												</Hyperlink>
+                                        </TextBlock>
+                                    </DataTemplate>
+                                </ItemsControl.ItemTemplate>
+                                <ItemsControl.ItemsPanel>
+                                    <ItemsPanelTemplate>
+                                        <WrapPanel Orientation="Horizontal" />
+                                    </ItemsPanelTemplate>
+                                </ItemsControl.ItemsPanel>
+                            </ItemsControl>
+                        </TabItem>
+                    </TabControl>
+                </StackPanel>
+            </TabItem>
+            <TabItem Header="Calendar"
+                     Width="Auto"
+                     Style="{Binding Source={StaticResource generalTab}}"
+                     PreviewMouseWheel="TabItem_PreviewMouseWheel">
+                <TabControl Name="CalendarSeasons"
+                            Background="Black"
+                            BorderBrush="{x:Null}"
+                            Foreground="{x:Null}">
+                    <TabItem Name="SpringTab"
+                             Width="175"
+                             Style="{StaticResource spring}"
+                             FontFamily="Stardew Valley"
+                             FontSize="22">
+                        <TabItem.Header>
+                            <Grid Width="{Binding ActualWidth, ElementName=SpringTab, Mode=OneWay}"
+                                  Height="{Binding ActualHeight, ElementName=SpringTab, Mode=OneWay}"
+                                  HorizontalAlignment="Center"
+                                  VerticalAlignment="Center">
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition Width="*" />
+                                    <ColumnDefinition Width="30" />
+                                </Grid.ColumnDefinitions>
+                                <TextBlock Name="spring"
+                                           Text="Spring"
+                                           VerticalAlignment="Center"
+                                           DockPanel.Dock="Top"
+                                           HorizontalAlignment="Center"
+                                           Grid.ColumnSpan="2" />
+                                <Image Source="{Binding Mode=OneWay, Source={StaticResource resetIcon}}"
+                                       Width="15"
+                                       Height="15"
+                                       Margin="0,5,0,2"
+                                       VerticalAlignment="Center"
+                                       DockPanel.Dock="Bottom"
+                                       HorizontalAlignment="Left"
+                                       Grid.Column="1"
+                                       ToolTip="Reset notes">
+                                    <Image.InputBindings>
+                                        <MouseBinding Command="{Binding _resetSeason, Source={StaticResource calendar}}"
+                                                      CommandParameter="{Binding Text, ElementName=spring}"
+                                                      MouseAction="LeftClick" />
+                                    </Image.InputBindings>
+                                </Image>
+                            </Grid>
+                        </TabItem.Header>
+                        <StackPanel>
+                            <!--Calendar Headers-->
+                            <Grid Background="#FFF0AF6A">
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition />
+                                    <ColumnDefinition />
+                                    <ColumnDefinition />
+                                    <ColumnDefinition />
+                                    <ColumnDefinition />
+                                    <ColumnDefinition />
+                                    <ColumnDefinition />
+                                </Grid.ColumnDefinitions>
+                                <TextBlock Text="Monday"
+                                           FontFamily="Stardew Valley"
+                                           FontSize="18"
+                                           HorizontalAlignment="Center"
+                                           VerticalAlignment="Center" />
+                                <TextBlock Text="Tuesday"
+                                           FontFamily="Stardew Valley"
+                                           FontSize="18"
+                                           HorizontalAlignment="Center"
+                                           VerticalAlignment="Center"
+                                           Grid.Column="1" />
+                                <TextBlock Text="Wednesday"
+                                           FontFamily="Stardew Valley"
+                                           FontSize="18"
+                                           HorizontalAlignment="Center"
+                                           VerticalAlignment="Center"
+                                           Grid.Column="2" />
+                                <TextBlock Text="Thursday"
+                                           FontFamily="Stardew Valley"
+                                           FontSize="18"
+                                           HorizontalAlignment="Center"
+                                           VerticalAlignment="Center"
+                                           Grid.Column="3" />
+                                <TextBlock Text="Friday"
+                                           FontFamily="Stardew Valley"
+                                           FontSize="18"
+                                           HorizontalAlignment="Center"
+                                           VerticalAlignment="Center"
+                                           Grid.Column="4" />
+                                <TextBlock Text="Saturday"
+                                           FontFamily="Stardew Valley"
+                                           FontSize="18"
+                                           HorizontalAlignment="Center"
+                                           VerticalAlignment="Center"
+                                           Grid.Column="5" />
+                                <TextBlock Text="Sunday"
+                                           FontFamily="Stardew Valley"
+                                           FontSize="18"
+                                           HorizontalAlignment="Center"
+                                           VerticalAlignment="Center"
+                                           Grid.Column="6" />
+                            </Grid>
+                            <!--Calendar Body-->
+                            <ItemsControl x:Name="Spring"
+                                          ItemsSource="{Binding Spring, Source={StaticResource calendar}}"
+                                          Margin="0"
+                                          Width="700">
+                                <ItemsControl.ItemTemplate>
+                                    <DataTemplate>
+                                        <StackPanel>
+                                            <ToggleButton Name="days"
+                                                          Width="100"
+                                                          Height="100"
+                                                          Command="{Binding _selectedDay, Source={StaticResource calendar}}"
+                                                          CommandParameter="{Binding Mode=OneWay}">
+                                                <ToggleButton.InputBindings>
+                                                    <MouseBinding Command="{Binding _openWebPage, Source={StaticResource calendar}}"
+                                                                  MouseAction="MiddleClick"
+                                                                  CommandParameter="{Binding Mode=OneWay}" />
+                                                </ToggleButton.InputBindings>
+                                                <StackPanel Width="100"
+                                                            Height="100"
+                                                            Orientation="Horizontal">
+                                                    <TextBlock Text="{Binding ID}"
+                                                               HorizontalAlignment="Left"
+                                                               VerticalAlignment="Top"
+                                                               FontSize="18"
+                                                               FontFamily="Stardew Valley"
+                                                               Width="50"
+                                                               Height="50" />
+                                                    <Image Source="{Binding Event}"
+                                                           Width="50"
+                                                           Height="50"
+                                                           VerticalAlignment="Bottom"
+                                                           HorizontalAlignment="Left"
+                                                           Stretch="Uniform"
+                                                           Margin="0"
+                                                           ToolTip="{Binding EventName}" />
+                                                    <ItemsControl ItemsSource="{Binding PlantedCrops}"
+                                                                  HorizontalAlignment="Left"
+                                                                  VerticalAlignment="Top"
+                                                                  Panel.ZIndex="1"
+                                                                  RenderTransformOrigin="-4.5,1.267"
+                                                                  Margin="-100,17,0,0"
+                                                                  Height="80"
+                                                                  Width="Auto"
+                                                                  MaxHeight="79"
+                                                                  UseLayoutRounding="True">
+                                                        <ItemsControl.ItemTemplate>
+                                                            <DataTemplate>
+                                                                <Image Width="20"
+                                                                       Height="20"
+                                                                       Source="{Binding Image}"
+                                                                       HorizontalAlignment="Left"
+                                                                       VerticalAlignment="Top"
+                                                                       ToolTip="{Binding Name}" />
+                                                            </DataTemplate>
+                                                        </ItemsControl.ItemTemplate>
+                                                        <ItemsControl.ItemsPanel>
+                                                            <ItemsPanelTemplate>
+                                                                <WrapPanel Orientation="Vertical" />
+                                                            </ItemsPanelTemplate>
+                                                        </ItemsControl.ItemsPanel>
+                                                    </ItemsControl>
+                                                </StackPanel>
+                                            </ToggleButton>
+                                            <Popup Name="noteEditor"
+                                                   IsOpen="{Binding ElementName=days, Path=IsChecked}"
+                                                   Placement="{Binding ElementName=days}"
+                                                   PopupAnimation="Slide"
+                                                   Cursor="Pen"
+                                                   StaysOpen="False"
+                                                   MinWidth="100"
+                                                   MinHeight="50"
+                                                   MaxWidth="300"
+                                                   HorizontalOffset="0"
+                                                   VerticalOffset="0">
+                                                <StackPanel Background="Black"
+                                                            Margin="2,2,2,1">
+                                                    <ItemsControl ItemsSource="{Binding CropListView}"
+                                                                  HorizontalAlignment="Left"
+                                                                  VerticalAlignment="Top"
+                                                                  Foreground="{x:Null}"
+                                                                  Background="{Binding Mode=OneWay, Source={StaticResource CalendarBackground}}"
+                                                                  BorderBrush="{x:Null}"
+                                                                  BorderThickness="0"
+                                                                  Width="{Binding MaxWidth, ElementName=noteEditor}">
+                                                        <ItemsControl.ItemTemplate>
+                                                            <DataTemplate>
+                                                                <TextBlock>
+												<Hyperlink Command="{Binding _isCropChecked, Source={StaticResource calendar}}"
+                                                                    CommandParameter="{Binding Mode=OneWay}"
+                                                                    TextDecorations="{x:Null}">
+											<Image HorizontalAlignment="Left"
+                                                                        Width="20"
+                                                                        Height="20"
+                                                                        VerticalAlignment="Top"
+                                                                        Margin="2,2,1,1"
+                                                                        Source="{Binding Image}">
+												<Image.Style>
+													<Style TargetType="{x:Type Image}">
+														<Style.Triggers>
+															<DataTrigger Value="True"
+                                                                                        Binding="{Binding IsChecked, UpdateSourceTrigger=PropertyChanged}">
+																<Setter Property="Opacity"
+                                                                                            Value="1" />
+																<Setter Property="Effect">
+																	<Setter.Value>
+																		<DropShadowEffect Opacity="0.5"
+                                                                                                    Direction="225"
+                                                                                                    ShadowDepth="4"
+                                                                                                    BlurRadius="5" />
+																	</Setter.Value>
+																</Setter>
+															</DataTrigger>
+															<DataTrigger Binding="{Binding IsChecked, UpdateSourceTrigger=PropertyChanged}"
+                                                                                        Value="False">
+																<Setter Property="Opacity"
+                                                                                            Value="0.4" />
+																<Setter Property="Effect">
+																	<Setter.Value>
+																		<DropShadowEffect Opacity="0.2"
+                                                                                                    Direction="225"
+                                                                                                    ShadowDepth="4"
+                                                                                                    BlurRadius="5" />
+																	</Setter.Value>
+																</Setter>
+															</DataTrigger>
+														</Style.Triggers>
+													</Style>
+												</Image.Style>
+												<Image.ToolTip>
+													<TextBlock>
+                                                                                    <TextBlock.Text>
+                                                                                        <MultiBinding StringFormat="{}{0} [{1} Days]">
+                                                                                            <Binding Path="Name" />
+                                                                                            <Binding Path="Days" />
+                                                                                        </MultiBinding>
+                                                                                    </TextBlock.Text>
+													</TextBlock>
+												</Image.ToolTip>
+											</Image>
+												</Hyperlink>
+													</TextBlock>
+                                                            </DataTemplate>
+                                                        </ItemsControl.ItemTemplate>
+                                                        <ItemsControl.ItemsPanel>
+                                                            <ItemsPanelTemplate>
+                                                                <WrapPanel Orientation="Horizontal" />
+                                                            </ItemsPanelTemplate>
+                                                        </ItemsControl.ItemsPanel>
+                                                    </ItemsControl>
+                                                    <TextBlock FontSize="16"
+                                                               FontWeight="Bold"
+                                                               Text="Player Notes"
+                                                               Background="{Binding Mode=OneWay, Source={StaticResource UnselectedBackground}}" />
+                                                    <TextBox Name="PlayerNotes"
+                                                             Width="Auto"
+                                                             Height="Auto"
+                                                             Text="{Binding PlayerNote}"
+                                                             TextWrapping="Wrap"
+                                                             MinWidth="100"
+                                                             MinHeight="25"
+                                                             AcceptsReturn="True"
+                                                             Padding="0"
+                                                             FontFamily="Segoe UI"
+                                                             FontSize="12" />
+                                                    <TextBlock FontSize="16"
+                                                               FontWeight="Bold"
+                                                               Text="Crop Notes"
+                                                               Background="{Binding Mode=OneWay, Source={StaticResource UnselectedBackground}}" />
+                                                    <TextBlock Name="CropNotes"
+                                                               Text="{Binding CropNote}"
+                                                               TextWrapping="Wrap"
+                                                               MinWidth="100"
+                                                               MinHeight="25"
+                                                               Background="#FFE8E8E8"
+                                                               FontFamily="Segoe UI"
+                                                               FontSize="12" />
+                                                </StackPanel>
+                                            </Popup>
+                                        </StackPanel>
+                                    </DataTemplate>
+                                </ItemsControl.ItemTemplate>
+                                <ItemsControl.ItemsPanel>
+                                    <ItemsPanelTemplate>
+                                        <WrapPanel Orientation="Horizontal" />
+                                    </ItemsPanelTemplate>
+                                </ItemsControl.ItemsPanel>
+                            </ItemsControl>
+                        </StackPanel>
+                    </TabItem>
+                    <TabItem Name="SummerTab"
+                             Width="175"
+                             Style="{StaticResource summer}"
+                             FontFamily="Stardew Valley"
+                             FontSize="22">
+                        <TabItem.Header>
+                            <Grid Width="{Binding ActualWidth, ElementName=SummerTab, Mode=OneWay}"
+                                  Height="{Binding ActualHeight, ElementName=SummerTab, Mode=OneWay}"
+                                  HorizontalAlignment="Center"
+                                  VerticalAlignment="Center">
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition Width="*" />
+                                    <ColumnDefinition Width="30" />
+                                </Grid.ColumnDefinitions>
+                                <TextBlock Name="summer"
+                                           Text="Summer"
+                                           VerticalAlignment="Center"
+                                           DockPanel.Dock="Top"
+                                           HorizontalAlignment="Center"
+                                           Grid.ColumnSpan="2" />
+                                <Image Source="{Binding Mode=OneWay, Source={StaticResource resetIcon}}"
+                                       Width="15"
+                                       Height="15"
+                                       Margin="0,5,0,2"
+                                       VerticalAlignment="Center"
+                                       DockPanel.Dock="Bottom"
+                                       HorizontalAlignment="Left"
+                                       Grid.Column="1"
+                                       ToolTip="Reset notes">
+                                    <Image.InputBindings>
+                                        <MouseBinding Command="{Binding _resetSeason, Source={StaticResource calendar}}"
+                                                      CommandParameter="{Binding Text, ElementName=summer}"
+                                                      MouseAction="LeftClick" />
+                                    </Image.InputBindings>
+                                </Image>
+                            </Grid>
+                        </TabItem.Header>
+                        <StackPanel>
+                            <!--Calendar Headers-->
+                            <Grid Background="#FFF0AF6A">
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition />
+                                    <ColumnDefinition />
+                                    <ColumnDefinition />
+                                    <ColumnDefinition />
+                                    <ColumnDefinition />
+                                    <ColumnDefinition />
+                                    <ColumnDefinition />
+                                </Grid.ColumnDefinitions>
+                                <TextBlock Text="Monday"
+                                           FontFamily="Stardew Valley"
+                                           FontSize="18"
+                                           HorizontalAlignment="Center"
+                                           VerticalAlignment="Center" />
+                                <TextBlock Text="Tuesday"
+                                           FontFamily="Stardew Valley"
+                                           FontSize="18"
+                                           HorizontalAlignment="Center"
+                                           VerticalAlignment="Center"
+                                           Grid.Column="1" />
+                                <TextBlock Text="Wednesday"
+                                           FontFamily="Stardew Valley"
+                                           FontSize="18"
+                                           HorizontalAlignment="Center"
+                                           VerticalAlignment="Center"
+                                           Grid.Column="2" />
+                                <TextBlock Text="Thursday"
+                                           FontFamily="Stardew Valley"
+                                           FontSize="18"
+                                           HorizontalAlignment="Center"
+                                           VerticalAlignment="Center"
+                                           Grid.Column="3" />
+                                <TextBlock Text="Friday"
+                                           FontFamily="Stardew Valley"
+                                           FontSize="18"
+                                           HorizontalAlignment="Center"
+                                           VerticalAlignment="Center"
+                                           Grid.Column="4" />
+                                <TextBlock Text="Saturday"
+                                           FontFamily="Stardew Valley"
+                                           FontSize="18"
+                                           HorizontalAlignment="Center"
+                                           VerticalAlignment="Center"
+                                           Grid.Column="5" />
+                                <TextBlock Text="Sunday"
+                                           FontFamily="Stardew Valley"
+                                           FontSize="18"
+                                           HorizontalAlignment="Center"
+                                           VerticalAlignment="Center"
+                                           Grid.Column="6" />
+                            </Grid>
+                            <!--Calendar Body-->
+                            <ItemsControl x:Name="Summer"
+                                          ItemsSource="{Binding Summer, Source={StaticResource calendar}}"
+                                          Margin="0"
+                                          Width="700">
+                                <ItemsControl.ItemTemplate>
+                                    <DataTemplate>
+                                        <StackPanel>
+                                            <ToggleButton Name="days"
+                                                          Width="100"
+                                                          Height="100"
+                                                          Command="{Binding _selectedDay, Source={StaticResource calendar}}"
+                                                          CommandParameter="{Binding Mode=OneWay}">
+                                                <ToggleButton.InputBindings>
+                                                    <MouseBinding Command="{Binding _openWebPage, Source={StaticResource calendar}}"
+                                                                  MouseAction="MiddleClick"
+                                                                  CommandParameter="{Binding Mode=OneWay}" />
+                                                </ToggleButton.InputBindings>
+                                                <StackPanel Width="100"
+                                                            Height="100"
+                                                            Orientation="Horizontal">
+                                                    <TextBlock Text="{Binding ID}"
+                                                               HorizontalAlignment="Left"
+                                                               VerticalAlignment="Top"
+                                                               FontSize="18"
+                                                               FontFamily="Stardew Valley"
+                                                               Width="50"
+                                                               Height="50" />
+                                                    <Image Source="{Binding Event}"
+                                                           Width="50"
+                                                           Height="50"
+                                                           VerticalAlignment="Bottom"
+                                                           HorizontalAlignment="Left"
+                                                           Stretch="Uniform"
+                                                           Margin="0"
+                                                           ToolTip="{Binding EventName}" />
+                                                    <ItemsControl ItemsSource="{Binding PlantedCrops}"
+                                                                  HorizontalAlignment="Left"
+                                                                  VerticalAlignment="Top"
+                                                                  Panel.ZIndex="1"
+                                                                  RenderTransformOrigin="-4.5,1.267"
+                                                                  Margin="-100,17,0,0"
+                                                                  Height="80"
+                                                                  Width="Auto"
+                                                                  MaxHeight="79"
+                                                                  UseLayoutRounding="True">
+                                                        <ItemsControl.ItemTemplate>
+                                                            <DataTemplate>
+                                                                <Image Width="20"
+                                                                       Height="20"
+                                                                       Source="{Binding Image}"
+                                                                       HorizontalAlignment="Left"
+                                                                       VerticalAlignment="Top"
+                                                                       ToolTip="{Binding Name}" />
+                                                            </DataTemplate>
+                                                        </ItemsControl.ItemTemplate>
+                                                    </ItemsControl>
+                                                </StackPanel>
+                                            </ToggleButton>
+                                            <Popup Name="noteEditor"
+                                                   IsOpen="{Binding ElementName=days, Path=IsChecked}"
+                                                   Placement="{Binding ElementName=days}"
+                                                   PopupAnimation="Slide"
+                                                   Cursor="Pen"
+                                                   StaysOpen="False"
+                                                   MinWidth="100"
+                                                   MinHeight="50"
+                                                   MaxWidth="300"
+                                                   HorizontalOffset="0"
+                                                   VerticalOffset="0">
+                                                <StackPanel Background="Black"
+                                                            Margin="2,2,2,1">
+                                                    <ItemsControl ItemsSource="{Binding CropListView}"
+                                                                  HorizontalAlignment="Left"
+                                                                  VerticalAlignment="Top"
+                                                                  Foreground="{x:Null}"
+                                                                  Background="{Binding Mode=OneWay, Source={StaticResource CalendarBackground}}"
+                                                                  BorderBrush="{x:Null}"
+                                                                  BorderThickness="0"
+                                                                  Width="{Binding MaxWidth, ElementName=noteEditor}">
+                                                        <ItemsControl.ItemTemplate>
+                                                            <DataTemplate>
+                                                                <TextBlock>
+												<Hyperlink Command="{Binding _isCropChecked, Source={StaticResource calendar}}"
+                                                                    CommandParameter="{Binding Mode=OneWay}"
+                                                                    TextDecorations="{x:Null}">
+											<Image HorizontalAlignment="Left"
+                                                                        Width="20"
+                                                                        Height="20"
+                                                                        VerticalAlignment="Top"
+                                                                        Margin="2,2,1,1"
+                                                                        Source="{Binding Image}">
+												<Image.Style>
+													<Style TargetType="{x:Type Image}">
+														<Style.Triggers>
+															<DataTrigger Value="True"
+                                                                                        Binding="{Binding IsChecked, UpdateSourceTrigger=PropertyChanged}">
+																<Setter Property="Opacity"
+                                                                                            Value="1" />
+																<Setter Property="Effect">
+																	<Setter.Value>
+																		<DropShadowEffect Opacity="0.5"
+                                                                                                    Direction="225"
+                                                                                                    ShadowDepth="4"
+                                                                                                    BlurRadius="5" />
+																	</Setter.Value>
+																</Setter>
+															</DataTrigger>
+															<DataTrigger Binding="{Binding IsChecked, UpdateSourceTrigger=PropertyChanged}"
+                                                                                        Value="False">
+																<Setter Property="Opacity"
+                                                                                            Value="0.4" />
+																<Setter Property="Effect">
+																	<Setter.Value>
+																		<DropShadowEffect Opacity="0.2"
+                                                                                                    Direction="225"
+                                                                                                    ShadowDepth="4"
+                                                                                                    BlurRadius="5" />
+																	</Setter.Value>
+																</Setter>
+															</DataTrigger>
+														</Style.Triggers>
+													</Style>
+												</Image.Style>
+												<Image.ToolTip>
+													<TextBlock>
+                                                                                    <TextBlock.Text>
+                                                                                        <MultiBinding StringFormat="{}{0} [{1} Days]">
+                                                                                            <Binding Path="Name" />
+                                                                                            <Binding Path="Days" />
+                                                                                        </MultiBinding>
+                                                                                    </TextBlock.Text>
+													</TextBlock>
+												</Image.ToolTip>
+											</Image>
+												</Hyperlink>
+													</TextBlock>
+                                                            </DataTemplate>
+                                                        </ItemsControl.ItemTemplate>
+                                                        <ItemsControl.ItemsPanel>
+                                                            <ItemsPanelTemplate>
+                                                                <WrapPanel Orientation="Horizontal" />
+                                                            </ItemsPanelTemplate>
+                                                        </ItemsControl.ItemsPanel>
+                                                    </ItemsControl>
+                                                    <TextBlock FontSize="16"
+                                                               FontWeight="Bold"
+                                                               Text="Player Notes"
+                                                               Background="{Binding Mode=OneWay, Source={StaticResource UnselectedBackground}}" />
+                                                    <TextBox Name="PlayerNotes"
+                                                             Width="Auto"
+                                                             Height="Auto"
+                                                             Text="{Binding PlayerNote}"
+                                                             TextWrapping="Wrap"
+                                                             MinWidth="100"
+                                                             MinHeight="25"
+                                                             AcceptsReturn="True"
+                                                             Padding="0"
+                                                             FontFamily="Segoe UI"
+                                                             FontSize="12" />
+                                                    <TextBlock FontSize="16"
+                                                               FontWeight="Bold"
+                                                               Text="Crop Notes"
+                                                               Background="{Binding Mode=OneWay, Source={StaticResource UnselectedBackground}}" />
+                                                    <TextBlock Name="CropNotes"
+                                                               Text="{Binding CropNote}"
+                                                               TextWrapping="Wrap"
+                                                               MinWidth="100"
+                                                               MinHeight="25"
+                                                               Background="#FFE8E8E8"
+                                                               FontFamily="Segoe UI"
+                                                               FontSize="12" />
+                                                </StackPanel>
+                                            </Popup>
+                                        </StackPanel>
+                                    </DataTemplate>
+                                </ItemsControl.ItemTemplate>
+                                <ItemsControl.ItemsPanel>
+                                    <ItemsPanelTemplate>
+                                        <WrapPanel Orientation="Horizontal" />
+                                    </ItemsPanelTemplate>
+                                </ItemsControl.ItemsPanel>
+                            </ItemsControl>
+                        </StackPanel>
+                    </TabItem>
+                    <TabItem Name="FallTab"
+                             Width="175"
+                             Style="{StaticResource fall}"
+                             FontFamily="Stardew Valley"
+                             FontSize="22">
+                        <TabItem.Header>
+                            <Grid Width="{Binding ActualWidth, ElementName=FallTab, Mode=OneWay}"
+                                  Height="{Binding ActualHeight, ElementName=FallTab, Mode=OneWay}"
+                                  HorizontalAlignment="Center"
+                                  VerticalAlignment="Center">
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition Width="*" />
+                                    <ColumnDefinition Width="30" />
+                                </Grid.ColumnDefinitions>
+                                <TextBlock Name="fall"
+                                           Text="Fall"
+                                           VerticalAlignment="Center"
+                                           DockPanel.Dock="Top"
+                                           HorizontalAlignment="Center"
+                                           Grid.ColumnSpan="2" />
+                                <Image Source="{Binding Mode=OneWay, Source={StaticResource resetIcon}}"
+                                       Width="15"
+                                       Height="15"
+                                       Margin="0,5,0,2"
+                                       VerticalAlignment="Center"
+                                       DockPanel.Dock="Bottom"
+                                       HorizontalAlignment="Left"
+                                       Grid.Column="1"
+                                       ToolTip="Reset notes">
+                                    <Image.InputBindings>
+                                        <MouseBinding Command="{Binding _resetSeason, Source={StaticResource calendar}}"
+                                                      CommandParameter="{Binding Text, ElementName=fall}"
+                                                      MouseAction="LeftClick" />
+                                    </Image.InputBindings>
+                                </Image>
+                            </Grid>
+                        </TabItem.Header>
+                        <StackPanel>
+                            <!--Calendar Headers-->
+                            <Grid Background="#FFF0AF6A">
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition />
+                                    <ColumnDefinition />
+                                    <ColumnDefinition />
+                                    <ColumnDefinition />
+                                    <ColumnDefinition />
+                                    <ColumnDefinition />
+                                    <ColumnDefinition />
+                                </Grid.ColumnDefinitions>
+                                <TextBlock Text="Monday"
+                                           FontFamily="Stardew Valley"
+                                           FontSize="18"
+                                           HorizontalAlignment="Center"
+                                           VerticalAlignment="Center" />
+                                <TextBlock Text="Tuesday"
+                                           FontFamily="Stardew Valley"
+                                           FontSize="18"
+                                           HorizontalAlignment="Center"
+                                           VerticalAlignment="Center"
+                                           Grid.Column="1" />
+                                <TextBlock Text="Wednesday"
+                                           FontFamily="Stardew Valley"
+                                           FontSize="18"
+                                           HorizontalAlignment="Center"
+                                           VerticalAlignment="Center"
+                                           Grid.Column="2" />
+                                <TextBlock Text="Thursday"
+                                           FontFamily="Stardew Valley"
+                                           FontSize="18"
+                                           HorizontalAlignment="Center"
+                                           VerticalAlignment="Center"
+                                           Grid.Column="3" />
+                                <TextBlock Text="Friday"
+                                           FontFamily="Stardew Valley"
+                                           FontSize="18"
+                                           HorizontalAlignment="Center"
+                                           VerticalAlignment="Center"
+                                           Grid.Column="4" />
+                                <TextBlock Text="Saturday"
+                                           FontFamily="Stardew Valley"
+                                           FontSize="18"
+                                           HorizontalAlignment="Center"
+                                           VerticalAlignment="Center"
+                                           Grid.Column="5" />
+                                <TextBlock Text="Sunday"
+                                           FontFamily="Stardew Valley"
+                                           FontSize="18"
+                                           HorizontalAlignment="Center"
+                                           VerticalAlignment="Center"
+                                           Grid.Column="6" />
+                            </Grid>
+                            <!--Calendar Body-->
+                            <ItemsControl x:Name="Fall"
+                                          ItemsSource="{Binding Fall, Source={StaticResource calendar}}"
+                                          Margin="0"
+                                          Width="700">
+                                <ItemsControl.ItemTemplate>
+                                    <DataTemplate>
+                                        <StackPanel>
+                                            <ToggleButton Name="days"
+                                                          Width="100"
+                                                          Height="100"
+                                                          Command="{Binding _selectedDay, Source={StaticResource calendar}}"
+                                                          CommandParameter="{Binding Mode=OneWay}">
+                                                <ToggleButton.InputBindings>
+                                                    <MouseBinding Command="{Binding _openWebPage, Source={StaticResource calendar}}"
+                                                                  MouseAction="MiddleClick"
+                                                                  CommandParameter="{Binding Mode=OneWay}" />
+                                                </ToggleButton.InputBindings>
+                                                <StackPanel Width="100"
+                                                            Height="100"
+                                                            Orientation="Horizontal">
+                                                    <TextBlock Text="{Binding ID}"
+                                                               HorizontalAlignment="Left"
+                                                               VerticalAlignment="Top"
+                                                               FontSize="18"
+                                                               FontFamily="Stardew Valley"
+                                                               Width="50"
+                                                               Height="50" />
+                                                    <Image Source="{Binding Event}"
+                                                           Width="50"
+                                                           Height="50"
+                                                           VerticalAlignment="Bottom"
+                                                           HorizontalAlignment="Left"
+                                                           Stretch="Uniform"
+                                                           Margin="0"
+                                                           ToolTip="{Binding EventName}" />
+                                                    <ItemsControl ItemsSource="{Binding PlantedCrops}"
+                                                                  HorizontalAlignment="Left"
+                                                                  VerticalAlignment="Top"
+                                                                  Panel.ZIndex="1"
+                                                                  RenderTransformOrigin="-4.5,1.267"
+                                                                  Margin="-100,17,0,0"
+                                                                  Height="80"
+                                                                  Width="Auto"
+                                                                  MaxHeight="79"
+                                                                  UseLayoutRounding="True">
+                                                        <ItemsControl.ItemTemplate>
+                                                            <DataTemplate>
+                                                                <Image Width="20"
+                                                                       Height="20"
+                                                                       Source="{Binding Image}"
+                                                                       HorizontalAlignment="Left"
+                                                                       VerticalAlignment="Top"
+                                                                       ToolTip="{Binding Name}" />
+                                                            </DataTemplate>
+                                                        </ItemsControl.ItemTemplate>
+                                                    </ItemsControl>
+                                                </StackPanel>
+                                            </ToggleButton>
+                                            <Popup Name="noteEditor"
+                                                   IsOpen="{Binding ElementName=days, Path=IsChecked}"
+                                                   Placement="{Binding ElementName=days}"
+                                                   PopupAnimation="Slide"
+                                                   Cursor="Pen"
+                                                   StaysOpen="False"
+                                                   MinWidth="100"
+                                                   MinHeight="50"
+                                                   MaxWidth="300"
+                                                   HorizontalOffset="0"
+                                                   VerticalOffset="0">
+                                                <StackPanel Background="Black"
+                                                            Margin="2,2,2,1">
+                                                    <ItemsControl ItemsSource="{Binding CropListView}"
+                                                                  HorizontalAlignment="Left"
+                                                                  VerticalAlignment="Top"
+                                                                  Foreground="{x:Null}"
+                                                                  Background="{Binding Mode=OneWay, Source={StaticResource CalendarBackground}}"
+                                                                  BorderBrush="{x:Null}"
+                                                                  BorderThickness="0"
+                                                                  Width="{Binding MaxWidth, ElementName=noteEditor}">
+                                                        <ItemsControl.ItemTemplate>
+                                                            <DataTemplate>
+                                                                <TextBlock>
+												<Hyperlink Command="{Binding _isCropChecked, Source={StaticResource calendar}}"
+                                                                    CommandParameter="{Binding Mode=OneWay}"
+                                                                    TextDecorations="{x:Null}">
+											<Image HorizontalAlignment="Left"
+                                                                        Width="20"
+                                                                        Height="20"
+                                                                        VerticalAlignment="Top"
+                                                                        Margin="2,2,1,1"
+                                                                        Source="{Binding Image}">
+												<Image.Style>
+													<Style TargetType="{x:Type Image}">
+														<Style.Triggers>
+															<DataTrigger Value="True"
+                                                                                        Binding="{Binding IsChecked, UpdateSourceTrigger=PropertyChanged}">
+																<Setter Property="Opacity"
+                                                                                            Value="1" />
+																<Setter Property="Effect">
+																	<Setter.Value>
+																		<DropShadowEffect Opacity="0.5"
+                                                                                                    Direction="225"
+                                                                                                    ShadowDepth="4"
+                                                                                                    BlurRadius="5" />
+																	</Setter.Value>
+																</Setter>
+															</DataTrigger>
+															<DataTrigger Binding="{Binding IsChecked, UpdateSourceTrigger=PropertyChanged}"
+                                                                                        Value="False">
+																<Setter Property="Opacity"
+                                                                                            Value="0.4" />
+																<Setter Property="Effect">
+																	<Setter.Value>
+																		<DropShadowEffect Opacity="0.2"
+                                                                                                    Direction="225"
+                                                                                                    ShadowDepth="4"
+                                                                                                    BlurRadius="5" />
+																	</Setter.Value>
+																</Setter>
+															</DataTrigger>
+														</Style.Triggers>
+													</Style>
+												</Image.Style>
+												<Image.ToolTip>
+													<TextBlock>
+                                                                                    <TextBlock.Text>
+                                                                                        <MultiBinding StringFormat="{}{0} [{1} Days]">
+                                                                                            <Binding Path="Name" />
+                                                                                            <Binding Path="Days" />
+                                                                                        </MultiBinding>
+                                                                                    </TextBlock.Text>
+													</TextBlock>
+												</Image.ToolTip>
+											</Image>
+												</Hyperlink>
+													</TextBlock>
+                                                            </DataTemplate>
+                                                        </ItemsControl.ItemTemplate>
+                                                        <ItemsControl.ItemsPanel>
+                                                            <ItemsPanelTemplate>
+                                                                <WrapPanel Orientation="Horizontal" />
+                                                            </ItemsPanelTemplate>
+                                                        </ItemsControl.ItemsPanel>
+                                                    </ItemsControl>
+                                                    <TextBlock FontSize="16"
+                                                               FontWeight="Bold"
+                                                               Text="Player Notes"
+                                                               Background="{Binding Mode=OneWay, Source={StaticResource UnselectedBackground}}" />
+                                                    <TextBox Name="PlayerNotes"
+                                                             Width="Auto"
+                                                             Height="Auto"
+                                                             Text="{Binding PlayerNote}"
+                                                             TextWrapping="Wrap"
+                                                             MinWidth="100"
+                                                             MinHeight="25"
+                                                             AcceptsReturn="True"
+                                                             Padding="0"
+                                                             FontFamily="Segoe UI"
+                                                             FontSize="12" />
+                                                    <TextBlock FontSize="16"
+                                                               FontWeight="Bold"
+                                                               Text="Crop Notes"
+                                                               Background="{Binding Mode=OneWay, Source={StaticResource UnselectedBackground}}" />
+                                                    <TextBlock Name="CropNotes"
+                                                               Text="{Binding CropNote}"
+                                                               TextWrapping="Wrap"
+                                                               MinWidth="100"
+                                                               MinHeight="25"
+                                                               Background="#FFE8E8E8"
+                                                               FontFamily="Segoe UI"
+                                                               FontSize="12" />
+                                                </StackPanel>
+                                            </Popup>
+                                        </StackPanel>
+                                    </DataTemplate>
+                                </ItemsControl.ItemTemplate>
+                                <ItemsControl.ItemsPanel>
+                                    <ItemsPanelTemplate>
+                                        <WrapPanel Orientation="Horizontal" />
+                                    </ItemsPanelTemplate>
+                                </ItemsControl.ItemsPanel>
+                            </ItemsControl>
+                        </StackPanel>
+                    </TabItem>
+                    <TabItem Name="WinterTab"
+                             Width="175"
+                             Style="{StaticResource winter}"
+                             FontFamily="Stardew Valley"
+                             FontSize="22">
+                        <TabItem.Header>
+                            <Grid x:Name="dockPanel"
+                                  Width="{Binding ActualWidth, ElementName=WinterTab, Mode=OneWay}"
+                                  Height="{Binding ActualHeight, ElementName=WinterTab, Mode=OneWay}"
+                                  HorizontalAlignment="Center"
+                                  VerticalAlignment="Center">
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition Width="*" />
+                                    <ColumnDefinition Width="30" />
+                                </Grid.ColumnDefinitions>
+                                <TextBlock Name="winter"
+                                           Text="Winter"
+                                           VerticalAlignment="Center"
+                                           DockPanel.Dock="Top"
+                                           HorizontalAlignment="Center"
+                                           Grid.ColumnSpan="2" />
+                                <Image Source="{Binding Mode=OneWay, Source={StaticResource resetIcon}}"
+                                       Width="15"
+                                       Height="15"
+                                       Margin="0,5,0,2"
+                                       VerticalAlignment="Center"
+                                       DockPanel.Dock="Bottom"
+                                       HorizontalAlignment="Left"
+                                       Grid.Column="1"
+                                       ToolTip="Reset notes">
+                                    <Image.InputBindings>
+                                        <MouseBinding Command="{Binding _resetSeason, Source={StaticResource calendar}}"
+                                                      CommandParameter="{Binding Text, ElementName=winter}"
+                                                      MouseAction="LeftClick" />
+                                    </Image.InputBindings>
+                                </Image>
+                            </Grid>
+                        </TabItem.Header>
+                        <StackPanel>
+                            <!--Calendar Headers-->
+                            <Grid Background="#FFF0AF6A">
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition />
+                                    <ColumnDefinition />
+                                    <ColumnDefinition />
+                                    <ColumnDefinition />
+                                    <ColumnDefinition />
+                                    <ColumnDefinition />
+                                    <ColumnDefinition />
+                                </Grid.ColumnDefinitions>
+                                <TextBlock Text="Monday"
+                                           FontFamily="Stardew Valley"
+                                           FontSize="18"
+                                           HorizontalAlignment="Center"
+                                           VerticalAlignment="Center" />
+                                <TextBlock Text="Tuesday"
+                                           FontFamily="Stardew Valley"
+                                           FontSize="18"
+                                           HorizontalAlignment="Center"
+                                           VerticalAlignment="Center"
+                                           Grid.Column="1" />
+                                <TextBlock Text="Wednesday"
+                                           FontFamily="Stardew Valley"
+                                           FontSize="18"
+                                           HorizontalAlignment="Center"
+                                           VerticalAlignment="Center"
+                                           Grid.Column="2" />
+                                <TextBlock Text="Thursday"
+                                           FontFamily="Stardew Valley"
+                                           FontSize="18"
+                                           HorizontalAlignment="Center"
+                                           VerticalAlignment="Center"
+                                           Grid.Column="3" />
+                                <TextBlock Text="Friday"
+                                           FontFamily="Stardew Valley"
+                                           FontSize="18"
+                                           HorizontalAlignment="Center"
+                                           VerticalAlignment="Center"
+                                           Grid.Column="4" />
+                                <TextBlock Text="Saturday"
+                                           FontFamily="Stardew Valley"
+                                           FontSize="18"
+                                           HorizontalAlignment="Center"
+                                           VerticalAlignment="Center"
+                                           Grid.Column="5" />
+                                <TextBlock Text="Sunday"
+                                           FontFamily="Stardew Valley"
+                                           FontSize="18"
+                                           HorizontalAlignment="Center"
+                                           VerticalAlignment="Center"
+                                           Grid.Column="6" />
+                            </Grid>
+                            <!--Calendar Body-->
+                            <ItemsControl x:Name="Winter"
+                                          ItemsSource="{Binding Winter, Source={StaticResource calendar}}"
+                                          Margin="0"
+                                          Width="700">
+                                <ItemsControl.ItemTemplate>
+                                    <DataTemplate>
+                                        <StackPanel>
+                                            <ToggleButton Name="days"
+                                                          Width="100"
+                                                          Height="100"
+                                                          Command="{Binding _selectedDay, Source={StaticResource calendar}}"
+                                                          CommandParameter="{Binding Mode=OneWay}">
+                                                <ToggleButton.InputBindings>
+                                                    <MouseBinding Command="{Binding _openWebPage, Source={StaticResource calendar}}"
+                                                                  MouseAction="MiddleClick"
+                                                                  CommandParameter="{Binding Mode=OneWay}" />
+                                                </ToggleButton.InputBindings>
+                                                <StackPanel Width="100"
+                                                            Height="100"
+                                                            Orientation="Horizontal">
+                                                    <TextBlock Text="{Binding ID}"
+                                                               HorizontalAlignment="Left"
+                                                               VerticalAlignment="Top"
+                                                               FontSize="18"
+                                                               FontFamily="Stardew Valley"
+                                                               Width="50"
+                                                               Height="50" />
+                                                    <Image Source="{Binding Event}"
+                                                           Width="50"
+                                                           Height="50"
+                                                           VerticalAlignment="Bottom"
+                                                           HorizontalAlignment="Left"
+                                                           Stretch="Uniform"
+                                                           Margin="0"
+                                                           ToolTip="{Binding EventName}" />
+                                                    <ItemsControl ItemsSource="{Binding PlantedCrops}"
+                                                                  HorizontalAlignment="Left"
+                                                                  VerticalAlignment="Top"
+                                                                  Panel.ZIndex="1"
+                                                                  RenderTransformOrigin="-4.5,1.267"
+                                                                  Margin="-100,17,0,0"
+                                                                  Height="80"
+                                                                  Width="Auto"
+                                                                  MaxHeight="79"
+                                                                  UseLayoutRounding="True">
+                                                        <ItemsControl.ItemTemplate>
+                                                            <DataTemplate>
+                                                                <Image Width="20"
+                                                                       Height="20"
+                                                                       Source="{Binding Image}"
+                                                                       HorizontalAlignment="Left"
+                                                                       VerticalAlignment="Top"
+                                                                       ToolTip="{Binding Name}" />
+                                                            </DataTemplate>
+                                                        </ItemsControl.ItemTemplate>
+                                                    </ItemsControl>
+                                                </StackPanel>
+                                            </ToggleButton>
+                                            <Popup Name="noteEditor"
+                                                   IsOpen="{Binding ElementName=days, Path=IsChecked}"
+                                                   Placement="{Binding ElementName=days}"
+                                                   PopupAnimation="Slide"
+                                                   Cursor="Pen"
+                                                   StaysOpen="False"
+                                                   MinWidth="100"
+                                                   MinHeight="50"
+                                                   MaxWidth="300"
+                                                   HorizontalOffset="0"
+                                                   VerticalOffset="0">
+                                                <StackPanel Background="Black"
+                                                            Margin="2,2,2,1">
+                                                    <ItemsControl ItemsSource="{Binding CropListView}"
+                                                                  HorizontalAlignment="Left"
+                                                                  VerticalAlignment="Top"
+                                                                  Foreground="{x:Null}"
+                                                                  Background="{Binding Mode=OneWay, Source={StaticResource CalendarBackground}}"
+                                                                  BorderBrush="{x:Null}"
+                                                                  BorderThickness="0"
+                                                                  Width="{Binding MaxWidth, ElementName=noteEditor}">
+                                                        <ItemsControl.ItemTemplate>
+                                                            <DataTemplate>
+                                                                <TextBlock FontFamily="Segoe UI">
+												<Hyperlink Command="{Binding _isCropChecked, Source={StaticResource calendar}}"
+                                                                    CommandParameter="{Binding Mode=OneWay}"
+                                                                    TextDecorations="{x:Null}">
+											<Image HorizontalAlignment="Left"
+                                                                        Width="20"
+                                                                        Height="20"
+                                                                        VerticalAlignment="Top"
+                                                                        Margin="2,2,1,1"
+                                                                        Source="{Binding Image}">
+												<Image.Style>
+													<Style TargetType="{x:Type Image}">
+														<Style.Triggers>
+															<DataTrigger Value="True"
+                                                                                        Binding="{Binding IsChecked, UpdateSourceTrigger=PropertyChanged}">
+																<Setter Property="Opacity"
+                                                                                            Value="1" />
+																<Setter Property="Effect">
+																	<Setter.Value>
+																		<DropShadowEffect Opacity="0.5"
+                                                                                                    Direction="225"
+                                                                                                    ShadowDepth="4"
+                                                                                                    BlurRadius="5" />
+																	</Setter.Value>
+																</Setter>
+															</DataTrigger>
+															<DataTrigger Binding="{Binding IsChecked, UpdateSourceTrigger=PropertyChanged}"
+                                                                                        Value="False">
+																<Setter Property="Opacity"
+                                                                                            Value="0.4" />
+																<Setter Property="Effect">
+																	<Setter.Value>
+																		<DropShadowEffect Opacity="0.2"
+                                                                                                    Direction="225"
+                                                                                                    ShadowDepth="4"
+                                                                                                    BlurRadius="5" />
+																	</Setter.Value>
+																</Setter>
+															</DataTrigger>
+														</Style.Triggers>
+													</Style>
+												</Image.Style>
+												<Image.ToolTip>
+													<TextBlock>
+                                                                                    <TextBlock.Text>
+                                                                                        <MultiBinding StringFormat="{}{0} [{1} Days]">
+                                                                                            <Binding Path="Name" />
+                                                                                            <Binding Path="Days" />
+                                                                                        </MultiBinding>
+                                                                                    </TextBlock.Text>
+													</TextBlock>
+												</Image.ToolTip>
+											</Image>
+												</Hyperlink>
+													</TextBlock>
+                                                            </DataTemplate>
+                                                        </ItemsControl.ItemTemplate>
+                                                        <ItemsControl.ItemsPanel>
+                                                            <ItemsPanelTemplate>
+                                                                <WrapPanel Orientation="Horizontal" />
+                                                            </ItemsPanelTemplate>
+                                                        </ItemsControl.ItemsPanel>
+                                                    </ItemsControl>
+                                                    <Label FontSize="16"
+                                                           FontWeight="Bold"
+                                                           Content="Player Note"
+                                                           Background="{Binding Mode=OneWay, Source={StaticResource UnselectedBackground}}" />
+                                                    <TextBox Name="PlayerNotes"
+                                                             Width="Auto"
+                                                             Height="Auto"
+                                                             TextWrapping="Wrap"
+                                                             MinWidth="100"
+                                                             MinHeight="25"
+                                                             AcceptsReturn="True"
+                                                             Padding="0"
+                                                             FontFamily="Segoe UI"
+                                                             FontSize="12"
+                                                             Text="{Binding PlayerNote}" />
+                                                    <Label FontSize="16"
+                                                           FontWeight="Bold"
+                                                           Content="Crop Note"
+                                                           Background="{Binding Mode=OneWay, Source={StaticResource UnselectedBackground}}" />
+                                                    <TextBlock Name="CropNote"
+                                                               TextWrapping="Wrap"
+                                                               MinWidth="100"
+                                                               MinHeight="25"
+                                                               Background="#FFE8E8E8"
+                                                               FontFamily="Segoe UI"
+                                                               FontSize="12"
+                                                               Text="{Binding CropNote}" />
+                                                </StackPanel>
+                                            </Popup>
+                                        </StackPanel>
+                                    </DataTemplate>
+                                </ItemsControl.ItemTemplate>
+                                <ItemsControl.ItemsPanel>
+                                    <ItemsPanelTemplate>
+                                        <WrapPanel Orientation="Horizontal" />
+                                    </ItemsPanelTemplate>
+                                </ItemsControl.ItemsPanel>
+                            </ItemsControl>
+                        </StackPanel>
+                    </TabItem>
+                    
+                </TabControl>
+            </TabItem>
+            <TabItem Header="Farm Planner"
+                     Style="{Binding Source={StaticResource generalTab}}">
+                <Border BorderBrush="{Binding Mode=OneWay, Source={StaticResource SolidBorderBrush}}"
+                        BorderThickness="2">
+                    <Grid Width="500"
+                      Height="200"
+                      Background="{Binding Mode=OneWay, Source={StaticResource UnselectedBackground}}">
+                    <StackPanel HorizontalAlignment="Center"
+                                VerticalAlignment="Center">
+                        <Button Content="Open Farm Planner (in development)"
+                                Width="auto"
+                                Height="25"
+                                Margin="1"
+                                Click="Button_Click" />
+                        <Button Content="Open Henrik Peinar's Planner (Web Page)"
+                                Width="auto"
+                                Height="25"
+                                Click="Button_Click_1" />
+                    </StackPanel>
+                    </Grid>
+                </Border>
+            </TabItem>
+        </TabControl>
+        <ToggleButton Name="Help"
+                DockPanel.Dock="Top"
+                Width="30"
+                Height="30"
+                HorizontalAlignment="Right"
+                Margin="0,0,60,-32"
+                VerticalAlignment="Bottom"
+                Background="{x:Null}"
+                BorderBrush="{x:Null}"
+                Padding="0">
+            <Image Source="{Binding Mode=OneWay, Source={StaticResource helpIcon}}" />
+        </ToggleButton>
+        <Popup IsOpen="{Binding IsChecked, ElementName=Help, Mode=OneWay}"
+               StaysOpen="False"
+               PopupAnimation="Fade"
+               Placement="Right"
+               VerticalAlignment="Center"
+               HorizontalAlignment="Center">
+            <Border BorderBrush="{Binding Mode=OneWay, Source={StaticResource SolidBorderBrush}}"
+                    BorderThickness="1">
+                <TextBlock Text="{Binding HelpNotes,Source={StaticResource options}}"
+                           Background="{Binding Mode=OneWay, Source={StaticResource UnselectedBackground}}"
+                           TextWrapping="Wrap"
+                           TextAlignment="Justify" />
+            </Border>
+        </Popup>
+        <Button Name="MinimizeManager"
+                DockPanel.Dock="Top"
+                Width="30"
+                Height="30"
+                HorizontalAlignment="Right"
+                Margin="0,0,30,-32"
+                VerticalAlignment="Bottom"
+                Background="{x:Null}"
+                BorderBrush="{x:Null}"
+                Click="MinimizeManager_Click"
+                Padding="0">
+            <Image Source="{Binding Mode=OneWay, Source={StaticResource minimizeIcon}}" />
+        </Button>
+        <Button Name="CloseManager"
+                DockPanel.Dock="Top"
+                Width="30"
+                Height="30"
+                HorizontalAlignment="Right"
+                Margin="0,0,0,-32"
+                VerticalAlignment="Bottom"
+                Background="{x:Null}"
+                BorderBrush="{x:Null}"
+                Click="CloseManager_Click"
+                Padding="0">
+            <Image Source="{Binding Mode=OneWay, Source={StaticResource closeIcon}}" />
+        </Button>
+    </DockPanel>
+</Window>

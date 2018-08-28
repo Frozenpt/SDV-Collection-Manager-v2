@@ -1,0 +1,8 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<config>
+  <greenhousemode>True</greenhousemode>
+  <selectedlayout>Standard</selectedlayout>
+  <layoutsize>75</layoutsize>
+  <layoutwidth>1280</layoutwidth>
+  <layoutheight>1040</layoutheight>
+</config>

@@ -1,0 +1,368 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<collections>
+  <shippeditems>
+    <pageone>
+      <item status="true" name="Wild Horseradish" href="/Wild_Horseradish" img="/Wild_Horseradish.png" time="00:00:00 AM" season="Spring" weather="" source="" />
+      <item status="true" name="Daffodil" href="/Daffodil" img="/Daffodil.png" time="00:00:00 AM" season="Spring" weather="" source="" />
+      <item status="true" name="Leek" href="/Leek" img="/Leek.png" time="00:00:00 AM" season="Spring" weather="" source="" />
+      <item status="true" name="Dandelion" href="/Dandelion" img="/Dandelion.png" time="00:00:00 AM" season="Spring" weather="" source="" />
+      <item status="true" name="Parsnip" href="/Parsnip" img="/Parsnip.png" time="00:00:00 AM" season="Spring" weather="" source="" />
+      <item status="true" name="Cave Carrot" href="/Cave_Carrot" img="/Cave_Carrot.png" time="00:00:00 AM" season="All" weather="" source="" />
+      <item status="false" name="Coconut" href="/Coconut" img="/Coconut.png" time="00:00:00 AM" season="Summer-Spring" weather="" source="" />
+      <item status="false" name="Cactus Fruit" href="/Cactus_Fruit" img="/Cactus_Fruit.png" time="00:00:00 AM" season="Summer-Spring" weather="" source="" />
+      <item status="true" name="Sap" href="/Sap" img="/Sap.png" time="00:00:00 AM" season="All" weather="" source="" />
+      <item status="true" name="Egg (white)" href="/Egg" img="/Egg.png" time="00:00:00 AM" season="All" weather="" source="" />
+      <item status="true" name="Large Egg (white)" href="/Large_Egg" img="/Large_Egg.png" time="00:00:00 AM" season="All" weather="" source="" />
+      <item status="true" name="Egg (brown)" href="/Egg" img="/Brown_Egg.png" time="00:00:00 AM" season="All" weather="" source="" />
+      <item status="true" name="Large Egg (brown)" href="/Large_Egg" img="/Large_Brown_Egg.png" time="00:00:00 AM" season="All" weather="" source="" />
+      <item status="true" name="Milk" href="/Milk" img="/Milk.png" time="00:00:00 AM" season="All" weather="" source="" />
+      <item status="true" name="Large Milk" href="/Large_Milk" img="/Large_Milk.png" time="00:00:00 AM" season="All" weather="" source="" />
+      <item status="true" name="Green Bean" href="/Green_Bean" img="/Green_Bean.png" time="00:00:00 AM" season="Spring" weather="" source="" />
+      <item status="true" name="Cauliflower" href="/Cauliflower" img="/Cauliflower.png" time="00:00:00 AM" season="Spring" weather="" source="" />
+      <item status="true" name="Potato" href="/Potato" img="/Potato.png" time="00:00:00 AM" season="Spring" weather="" source="" />
+      <item status="false" name="Garlic" href="/Garlic" img="/Garlic.png" time="00:00:00 AM" season="Spring" weather="" source="" />
+      <item status="false" name="Kale" href="/Kale" img="/Kale.png" time="00:00:00 AM" season="Spring" weather="" source="" />
+      <item status="false" name="Rhubarb" href="/Rhubarb" img="/Rhubarb.png" time="00:00:00 AM" season="Spring" weather="" source="" />
+      <item status="true" name="Melon" href="/Melon" img="/Melon.png" time="00:00:00 AM" season="Summer" weather="" source="" />
+      <item status="false" name="Tomato" href="/Tomato" img="/Tomato.png" time="00:00:00 AM" season="Summer" weather="" source="" />
+      <item status="true" name="Morel" href="/Morel" img="/Morel.png" time="00:00:00 AM" season="Spring" weather="" source="" />
+      <item status="true" name="Blueberry" href="/Blueberry" img="/Blueberry.png" time="00:00:00 AM" season="Summer" weather="" source="" />
+      <item status="false" name="Fiddlehead Fern" href="/Fiddlehead_Fern" img="/Fiddlehead_Fern.png" time="00:00:00 AM" season="Summer" weather="" source="" />
+      <item status="false" name="Hot Pepper" href="/Hot_Pepper" img="/Hot_Pepper.png" time="00:00:00 AM" season="Summer" weather="" source="" />
+      <item status="true" name="Wheat" href="/Wheat" img="/Wheat.png" time="00:00:00 AM" season="Summer-Fall" weather="" source="" />
+      <item status="false" name="Radish" href="/Radish" img="/Radish.png" time="00:00:00 AM" season="Summer" weather="" source="" />
+      <item status="false" name="Red Cabbage" href="/Red_Cabbage" img="/Red_Cabbage.png" time="00:00:00 AM" season="Summer" weather="" source="" />
+      <item status="false" name="Starfruit" href="/Starfruit" img="/Starfruit.png" time="00:00:00 AM" season="Summer" weather="" source="" />
+      <item status="true" name="Corn" href="/Corn" img="/Corn.png" time="00:00:00 AM" season="Summer-Fall" weather="" source="" />
+      <item status="true" name="Eggplant" href="/Eggplant" img="/Eggplant.png" time="00:00:00 AM" season="Fall" weather="" source="" />
+      <item status="false" name="Artichoke" href="/Artichoke" img="/Artichoke.png" time="00:00:00 AM" season="Fall" weather="" source="" />
+      <item status="false" name="Pumpkin" href="/Pumpkin" img="/Pumpkin.png" time="00:00:00 AM" season="Fall" weather="" source="" />
+      <item status="true" name="Bok Choy" href="/Bok_Choy" img="/Bok_Choy.png" time="00:00:00 AM" season="Fall" weather="" source="" />
+      <item status="false" name="Yam" href="/Yam" img="/Yam.png" time="00:00:00 AM" season="Fall" weather="" source="" />
+      <item status="false" name="Chanterelle" href="/Chanterelle" img="/Chanterelle.png" time="00:00:00 AM" season="Fall" weather="" source="" />
+      <item status="false" name="Cranberries" href="/Cranberries" img="/Cranberries.png" time="00:00:00 AM" season="Fall" weather="" source="" />
+      <item status="true" name="Holly" href="/Holly" img="/Holly.png" time="00:00:00 AM" season="Winter" weather="" source="" />
+      <item status="false" name="Beet" href="/Beet" img="/Beet.png" time="00:00:00 AM" season="Fall" weather="" source="" />
+      <item status="true" name="Salmonberry" href="/Salmonberry" img="/Salmonberry.png" time="00:00:00 AM" season="Spring" weather="" source="" />
+      <item status="false" name="Amaranth" href="/Amaranth" img="/Amaranth.png" time="00:00:00 AM" season="Fall" weather="" source="" />
+      <item status="false" name="Pale Ale" href="/Pale_Ale" img="/Pale_Ale.png" time="00:00:00 AM" season="All" weather="" source="" />
+      <item status="false" name="Hops" href="/Hops" img="/Hops.png" time="00:00:00 AM" season="Summer" weather="" source="" />
+      <item status="false" name="Void Egg" href="/Void_Egg" img="/Void_Egg.png" time="00:00:00 AM" season="All" weather="" source="" />
+      <item status="false" name="Mayonnaise" href="/Mayonnaise" img="/Mayonnaise.png" time="00:00:00 AM" season="All" weather="" source="" />
+      <item status="false" name="Duck Mayonnaise" href="/Duck_Mayonnaise" img="/Duck_Mayonnaise.png" time="00:00:00 AM" season="All" weather="" source="" />
+      <item status="false" name="Void Mayonnaise" href="/Void_Mayonnaise" img="/Void_Mayonnaise.png" time="00:00:00 AM" season="All" weather="" source="" />
+      <item status="true" name="Clay" href="/Clay" img="/Clay.png" time="00:00:00 AM" season="All" weather="" source="" />
+      <item status="false" name="Copper Bar" href="/Copper_Bar" img="/Copper_Bar.png" time="00:00:00 AM" season="All" weather="" source="" />
+      <item status="false" name="Iron Bar" href="/Iron_Bar" img="/Iron_Bar.png" time="00:00:00 AM" season="All" weather="" source="" />
+      <item status="false" name="Gold Bar" href="/Gold_Bar" img="/Gold_Bar.png" time="00:00:00 AM" season="All" weather="" source="" />
+      <item status="false" name="Iridium Bar" href="/Iridium_Bar" img="/Iridium_Bar.png" time="00:00:00 AM" season="All" weather="" source="" />
+      <item status="false" name="Refined Quartz" href="/Refined_Quartz" img="/Refined_Quartz.png" time="00:00:00 AM" season="All" weather="" source="" />
+      <item status="true" name="Honey" href="/Honey" img="/Honey.png" time="00:00:00 AM" season="Spring-Summer-Fall" weather="" source="" />
+      <item status="false" name="Pickles (any)" href="/Pickles" img="/Pickles.png" time="00:00:00 AM" season="All" weather="" source="" />
+      <item status="true" name="Jelly (any)" href="/Jelly" img="/Jelly.png" time="00:00:00 AM" season="All" weather="" source="" />
+      <item status="false" name="Beer" href="/Beer" img="/Beer.png" time="00:00:00 AM" season="All" weather="" source="" />
+      <item status="true" name="Wine (any)" href="/Wine" img="/Wine.png" time="00:00:00 AM" season="All" weather="" source="" />
+      <item status="true" name="Juice (any)" href="/Juice" img="/Juice.png" time="00:00:00 AM" season="All" weather="" source="" />
+      <item status="true" name="Clam" href="/Clam" img="/Clam.png" time="00:00:00 AM" season="All" weather="" source="" />
+      <item status="false" name="Copper Ore" href="/Copper_Ore" img="/Copper_Ore.png" time="00:00:00 AM" season="All" weather="" source="" />
+      <item status="false" name="Iron Ore" href="/Iron_Ore" img="/Iron_Ore.png" time="00:00:00 AM" season="All" weather="" source="" />
+      <item status="true" name="Coal" href="/Coal" img="/Coal.png" time="00:00:00 AM" season="All" weather="" source="" />
+      <item status="false" name="Gold Ore" href="/Gold_Ore" img="/Gold_Ore.png" time="00:00:00 AM" season="All" weather="" source="" />
+      <item status="false" name="Iridium Ore" href="/Iridium_Ore" img="/Iridium_Ore.png" time="00:00:00 AM" season="All" weather="" source="" />
+      <item status="true" name="Wood" href="/Wood" img="/Wood.png" time="00:00:00 AM" season="All" weather="" source="" />
+      <item status="true" name="Stone" href="/Stone" img="/Stone.png" time="00:00:00 AM" season="All" weather="" source="" />
+      <item status="true" name="Nautilus Shell" href="/Nautilus_Shell" img="/Nautilus_Shell.png" time="00:00:00 AM" season="Winter" weather="" source="" />
+    </pageone>
+    <pagetwo>
+      <item status="true" name="Coral" href="/Coral" img="/Coral.png" time="00:00:00 AM" season="All" weather="" source="" />
+      <item status="true" name="Rainbow Shell" href="/Rainbow_Shell" img="/Rainbow_Shell.png" time="00:00:00 AM" season="Summer" weather="" source="" />
+      <item status="true" name="Spice Berry" href="/Spice_Berry" img="/Spice_Berry.png" time="00:00:00 AM" season="Summer" weather="" source="" />
+      <item status="true" name="Sea Urchin" href="/Sea_Urchin" img="/Sea_Urchin.png" time="00:00:00 AM" season="All" weather="" source="" />
+      <item status="true" name="Grape" href="/Grape" img="/Grape.png" time="00:00:00 AM" season="Summer-Fall" weather="" source="" />
+      <item status="true" name="Spring Onion" href="/Spring_Onion" img="/Spring_Onion.png" time="00:00:00 AM" season="Spring" weather="" source="" />
+      <item status="false" name="Strawberry" href="/Strawberry" img="/Strawberry.png" time="00:00:00 AM" season="Spring" weather="" source="" />
+      <item status="true" name="Sweet Pea" href="/Sweet_Pea" img="/Sweet_Pea.png" time="00:00:00 AM" season="Summer" weather="" source="" />
+      <item status="true" name="Common Mushroom" href="/Common_Mushroom" img="/Common_Mushroom.png" time="00:00:00 AM" season="Spring-Fall" weather="" source="" />
+      <item status="true" name="Wild Plum" href="/Wild_Plum" img="/Wild_Plum.png" time="00:00:00 AM" season="Fall" weather="" source="" />
+      <item status="true" name="Hazelnut" href="/Hazelnut" img="/Hazelnut.png" time="00:00:00 AM" season="Fall" weather="" source="" />
+      <item status="true" name="Blackberry" href="/Blackberry" img="/Blackberry.png" time="00:00:00 AM" season="Fall" weather="" source="" />
+      <item status="true" name="Winter Root" href="/Winter_Root" img="/Winter_Root.png" time="00:00:00 AM" season="Winter" weather="" source="" />
+      <item status="true" name="Crystal Fruit" href="/Crystal_Fruit" img="/Crystal_Fruit.png" time="00:00:00 AM" season="Winter" weather="" source="" />
+      <item status="true" name="Snow Yam" href="/Snow_Yam" img="/Snow_Yam.png" time="00:00:00 AM" season="Winter" weather="" source="" />
+      <item status="false" name="Sweet Gem Berry" href="/Sweet_Gem_Berry" img="/Sweet_Gem_Berry.png" time="00:00:00 AM" season="Fall" weather="" source="" />
+      <item status="false" name="Crocus" href="/Crocus" img="/Crocus.png" time="00:00:00 AM" season="Winter" weather="" source="" />
+      <item status="true" name="Red Mushroom" href="/Red_Mushroom" img="/Red_Mushroom.png" time="00:00:00 AM" season="Summer" weather="" source="" />
+      <item status="true" name="Sunflower" href="/Sunflower" img="/Sunflower.png" time="00:00:00 AM" season="Summer-Fall" weather="" source="" />
+      <item status="true" name="Purple Mushroom" href="/Purple_Mushroom" img="/Purple_Mushroom.png" time="00:00:00 AM" season="Summer" weather="" source="" />
+      <item status="false" name="Cheese" href="/Cheese" img="/Cheese.png" time="00:00:00 AM" season="All" weather="" source="" />
+      <item status="false" name="Goat Cheese" href="/Goat_Cheese" img="/Goat_Cheese.png" time="00:00:00 AM" season="All" weather="" source="" />
+      <item status="false" name="Cloth" href="/Cloth" img="/Cloth.png" time="00:00:00 AM" season="All" weather="" source="" />
+      <item status="false" name="Truffle" href="/Truffle" img="/Truffle.png" time="00:00:00 AM" season="Spring-Summer-Fall" weather="" source="" />
+      <item status="false" name="Truffle Oil" href="/Truffle_Oil" img="/Truffle_Oil.png" time="00:00:00 AM" season="All" weather="" source="" />
+      <item status="false" name="Coffee" href="/Coffee" img="/Coffee.png" time="00:00:00 AM" season="All" weather="" source="" />
+      <item status="true" name="Goat Milk" href="/Goat_Milk" img="/Goat_Milk.png" time="00:00:00 AM" season="All" weather="" source="" />
+      <item status="false" name="Large Goat Milk" href="/Large_Goat_Milk" img="/Large_Goat_Milk.png" time="00:00:00 AM" season="All" weather="" source="" />
+      <item status="false" name="Wool" href="/Wool" img="/Wool.png" time="00:00:00 AM" season="All" weather="" source="" />
+      <item status="false" name="Duck Egg" href="/Duck_Egg" img="/Duck_Egg.png" time="00:00:00 AM" season="All" weather="" source="" />
+      <item status="false" name="Duck Feather" href="/Duck_Feather" img="/Duck_Feather.png" time="00:00:00 AM" season="All" weather="" source="" />
+      <item status="false" name="Rabbit's Foot" href="/Rabbit's_Foot" img="/Rabbit's_Foot.png" time="00:00:00 AM" season="All" weather="" source="" />
+      <item status="false" name="Ancient Fruit" href="/Ancient_Fruit" img="/Ancient_Fruit.png" time="00:00:00 AM" season="Spring-Summer-Fall" weather="" source="" />
+      <item status="false" name="Mead" href="/Mead" img="/Mead.png" time="00:00:00 AM" season="All" weather="" source="" />
+      <item status="false" name="Tulip" href="/Tulip" img="/Tulip.png" time="00:00:00 AM" season="Spring" weather="" source="" />
+      <item status="false" name="Summer Spangle" href="/Summer_Spangle" img="/Summer_Spangle.png" time="00:00:00 AM" season="Summer" weather="" source="" />
+      <item status="false" name="Fairy Rose (any colour)" href="/Fairy_Rose" img="/Fairy_Rose.png" time="00:00:00 AM" season="Fall" weather="" source="" />
+      <item status="false" name="Blue Jazz" href="/Blue_Jazz" img="/Blue_Jazz.png" time="00:00:00 AM" season="Spring" weather="" source="" />
+      <item status="false" name="Poppy" href="/Poppy" img="/Poppy.png" time="00:00:00 AM" season="Summer" weather="" source="" />
+      <item status="false" name="Apple" href="/Apple" img="/Apple.png" time="00:00:00 AM" season="Fall" weather="" source="" />
+      <item status="false" name="Apricot" href="/Apricot" img="/Apricot.png" time="00:00:00 AM" season="Spring" weather="" source="" />
+      <item status="true" name="Orange" href="/Orange" img="/Orange.png" time="00:00:00 AM" season="Summer" weather="" source="" />
+      <item status="false" name="Peach" href="/Peach" img="/Peach.png" time="00:00:00 AM" season="Summer" weather="" source="" />
+      <item status="false" name="Pomegranate" href="/Pomegranate" img="/Pomegranate.png" time="00:00:00 AM" season="Fall" weather="" source="" />
+      <item status="false" name="Cherry" href="/Cherry" img="/Cherry.png" time="00:00:00 AM" season="Spring" weather="" source="" />
+      <item status="false" name="Bug Meat" href="/Bug_Meat" img="/Bug_Meat.png" time="00:00:00 AM" season="All" weather="" source="" />
+      <item status="true" name="Hardwood" href="/Hardwood" img="/Hardwood.png" time="00:00:00 AM" season="All" weather="" source="" />
+      <item status="false" name="Maple Syrup" href="/Maple_Syrup" img="/Maple_Syrup.png" time="00:00:00 AM" season="All" weather="" source="" />
+      <item status="false" name="Oak Resin" href="/Oak_Resin" img="/Oak_Resin.png" time="00:00:00 AM" season="All" weather="" source="" />
+      <item status="false" name="Pine Tar" href="/Pine_Tar" img="/Pine_Tar.png" time="00:00:00 AM" season="All" weather="" source="" />
+      <item status="true" name="Slime" href="/Slime" img="/Slime.png" time="00:00:00 AM" season="All" weather="" source="" />
+      <item status="true" name="Bat Wing" href="/Bat_Wing" img="/Bat_Wing.png" time="00:00:00 AM" season="All" weather="" source="" />
+      <item status="true" name="Solar Essence" href="/Solar_Essence" img="/Solar_Essence.png" time="00:00:00 AM" season="All" weather="" source="" />
+      <item status="true" name="Void Essence" href="/Void_Essence" img="/Void_Essence.png" time="00:00:00 AM" season="All" weather="" source="" />
+      <item status="true" name="Fiber" href="/Fiber" img="/Fiber.png" time="00:00:00 AM" season="All" weather="" source="" />
+      <item status="false" name="Battery Pack" href="/Battery_Pack" img="/Battery_Pack.png" time="00:00:00 AM" season="Spring-Summer-Fall" weather="" source="" />
+    </pagetwo>
+  </shippeditems>
+  <fish>
+    <item status="false" name="Pufferfish" href="/Pufferfish" img="/Pufferfish.png" time="12:00:00 PM-04:00:00 PM" season="Summer" weather="Sun" source="Ocean" />
+    <item status="true" name="Anchovy" href="/Anchovy" img="/Anchovy.png" time="Any" season="Spring-Fall" weather="Any" source="Ocean" />
+    <item status="true" name="Tuna" href="/Tuna" img="/Tuna.png" time="06:00:00 AM-07:00:00 PM" season="Summer-Winter" weather="Any" source="Ocean" />
+    <item status="true" name="Sardine" href="/Sardine" img="/Sardine.png" time="6-07:00:00 PM" season="Spring-Fall-Winter" weather="Any" source="Ocean" />
+    <item status="true" name="Bream" href="/Bream" img="/Bream.png" time="06:00:00 PM-02:00:00 AM" season="All" weather="Any" source="River" />
+    <item status="true" name="Largemouth Bass" href="/Largemouth_Bass" img="/Largemouth_Bass.png" time="06:00:00 AM-07:00:00 PM" season="All" weather="Any" source="Mountain Lake" />
+    <item status="true" name="Smallmouth Bass" href="/Smallmouth_Bass" img="/Smallmouth_Bass.png" time="Any" season="Spring-Fall" weather="Any" source="River-Mountain Lake-Secret Woods" />
+    <item status="true" name="Rainbow Trout" href="/Rainbow_Trout" img="/Rainbow_Trout.png" time="06:00:00 AM-07:00:00 PM" season="Summer" weather="Sun" source="River-Mountain Lake" />
+    <item status="false" name="Salmon" href="/Salmon" img="/Salmon.png" time="06:00:00 AM-07:00:00 PM" season="Fall" weather="Any" source="River" />
+    <item status="true" name="Walleye" href="/Walleye" img="/Walleye.png" time="12:00:00 PM-02:00:00 AM" season="Fall" weather="Rain" source="River-Lake-Secret Woods" />
+    <item status="true" name="Perch" href="/Perch" img="/Perch.png" time="Any" season="Winter" weather="Any" source="Lake" />
+    <item status="true" name="Carp" href="/Carp" img="/Carp.png" time="Any" season="All" weather="Any" source="Lake-Sewer-Mutant Bug Lair" />
+    <item status="false" name="Catfish" href="/Catfish" img="/Catfish.png" time="Any" season="Spring-Fall-Summer" weather="Rain" source="River-Secret Woods" />
+    <item status="true" name="Pike" href="/Pike" img="/Pike.png" time="Any" season="Summer-Winter" weather="Any" source="River" />
+    <item status="true" name="Sunfish" href="/Sunfish" img="/Sunfish.png" time="06:00:00 AM-07:00:00 PM" season="Spring-Summer" weather="Sun" source="River" />
+    <item status="true" name="Red Mullet" href="/Red_Mullet" img="/Red_Mullet.png" time="06:00:00 AM-07:00:00 PM" season="Summer-Winter" weather="Any" source="Ocean" />
+    <item status="true" name="Herring" href="/Herring" img="/Herring.png" time="Any" season="Spring-Winter" weather="Any" source="Ocean" />
+    <item status="true" name="Eel" href="/Eel" img="/Eel.png" time="04:00:00 PM-02:00:00 AM" season="Spring-Fall" weather="Rain" source="Ocean" />
+    <item status="false" name="Octopus" href="/Octopus" img="/Octopus.png" time="06:00:00 AM-01:00:00 PM" season="Summer" weather="Any" source="Ocean" />
+    <item status="false" name="Red Snapper" href="/Red_Snapper" img="/Red_Snapper.png" time="06:00:00 AM-07:00:00 PM" season="Summer-Fall" weather="Rain" source="Ocean" />
+    <item status="true" name="Squid" href="/Squid" img="/Squid.png" time="06:00:00 PM-02:00:00 AM" season="Winter" weather="Any" source="Ocean" />
+    <item status="true" name="Seaweed" href="/Seaweed" img="/Seaweed.png" time="Any" season="All" weather="Any" source="All" />
+    <item status="true" name="Green Algae" href="/Green_Algae" img="/Green_Algae.png" time="Any" season="All" weather="Any" source="All" />
+    <item status="false" name="Sea Cucumber" href="/Sea_Cucumber" img="/Sea_Cucumber.png" time="06:00:00 AM-07:00:00 PM" season="Fall-Winter" weather="Any" source="Ocean" />
+    <item status="true" name="Super Cucumber" href="/Super_Cucumber" img="/Super_Cucumber.png" time="06:00:00 PM-02:00:00 AM" season="Summer-Fall" weather="Any" source="Ocean" />
+    <item status="false" name="Ghostfish" href="/Ghostfish" img="/Ghostfish.png" time="Any" season="All" weather="Any" source="The Mines 20,60,100" />
+    <item status="false" name="White Algae" href="/White_Algae" img="/White_Algae.png" time="Any" season="All" weather="Any" source="Anywhere" />
+    <item status="false" name="Stonefish" href="/Stonefish" img="/Stonefish.png" time="Any" season="All" weather="Any" source="The Mines 20" />
+    <item status="false" name="Crimsonfish" href="/Crimsonfish" img="/Crimsonfish.png" time="Any" season="Summer" weather="Any" source="Ocean" />
+    <item status="true" name="Angler" href="/Angler" img="/Angler.png" time="Any" season="Fall" weather="Any" source="Town" />
+    <item status="false" name="Ice Pip" href="/Ice_Pip" img="/Ice_Pip.png" time="Any" season="All" weather="Any" source="The Mines 60" />
+    <item status="true" name="Lava Eel" href="/Lava_Eel" img="/Lava_Eel.png" time="Any" season="All" weather="Any" source="The Mines 100" />
+    <item status="false" name="Legend" href="/Legend" img="/Legend.png" time="Any" season="Spring" weather="Rain" source="Mountain Lake" />
+    <item status="false" name="Sandfish" href="/Sandfish" img="/Sandfish.png" time="06:00:00 AM-8:00:00 PM" season="All" weather="Any" source="Desert" />
+    <item status="false" name="Scorpion Carp" href="/Scorpion_Carp" img="/Scorpion_Carp.png" time="06:00:00 AM-8:00:00 PM" season="All" weather="Any" source="Desert" />
+    <item status="false" name="Mutant Carp" href="/Mutant_Carp" img="/Mutant_Carp.png" time="Any" season="All" weather="Any" source="The Sewers" />
+    <item status="true" name="Sturgeon" href="/Sturgeon" img="/Sturgeon.png" time="06:00:00 AM-07:00:00 PM" season="Summer-Winter" weather="Any" source="Mountain Lake" />
+    <item status="false" name="Tiger Trout" href="/Tiger_Trout" img="/Tiger_Trout.png" time="06:00:00 AM-07:00:00 PM" season="Fall-Winter" weather="Any" source="River" />
+    <item status="true" name="Bullhead" href="/Bullhead" img="/Bullhead.png" time="Any" season="All" weather="Any" source="Mountain Lake" />
+    <item status="false" name="Tilapia" href="/Tilapia" img="/Tilapia.png" time="06:00:00 AM-02:00:00 PM" season="Summer-Fall" weather="Any" source="Ocean" />
+    <item status="true" name="Chub" href="/Chub" img="/Chub.png" time="Any" season="All" weather="Any" source="River-Mountain Lake" />
+    <item status="false" name="Dorado" href="/Dorado" img="/Dorado.png" time="06:00:00 AM-07:00:00 PM" season="Summer" weather="Any" source="River" />
+    <item status="true" name="Albacore" href="/Albacore" img="/Albacore.png" time="06:00:00 AM-11:00:00 AM,06:00:00 PM-02:00:00 AM" season="Fall-Winter" weather="Any" source="Ocean" />
+    <item status="false" name="Shad" href="/Shad" img="/Shad.png" time="9:00:00 AM-02:00:00 AM" season="Spring-Fall-Summer" weather="Rain" source="River" />
+    <item status="true" name="Lingcod" href="/Lingcod" img="/Lingcod.png" time="Any" season="Winter" weather="Any" source="River-Mountain Lake" />
+    <item status="true" name="Halibut" href="/Halibut" img="/Halibut.png" time="06:00:00 AM-11:00:00 AM,07:00:00 PM-02:00:00 AM" season="Spring-Summer-Winter" weather="Any" source="Ocean" />
+    <item status="false" name="Lobster" href="/Lobster" img="/Lobster.png" time="Any" season="All" weather="Any" source="Ocean" />
+    <item status="false" name="Crayfish" href="/Crayfish" img="/Crayfish.png" time="Any" season="All" weather="Any" source="River-Mountain Lake" />
+    <item status="false" name="Crab" href="/Crab" img="/Crab.png" time="Any" season="All" weather="Any" source="Ocean" />
+    <item status="false" name="Cockle" href="/Cockle" img="/Cockle.png" time="Any" season="All" weather="Any" source="Ocean" />
+    <item status="false" name="Mussel" href="/Mussel" img="/Mussel.png" time="Any" season="All" weather="Any" source="Ocean" />
+    <item status="false" name="Shrimp" href="/Shrimp" img="/Shrimp.png" time="Any" season="All" weather="Any" source="Ocean" />
+    <item status="false" name="Snail" href="/Snail" img="/Snail.png" time="Any" season="All" weather="Any" source="River" />
+    <item status="false" name="Periwinkle" href="/Periwinkle" img="/Periwinkle.png" time="Any" season="All" weather="Any" source="River" />
+    <item status="false" name="Oyster" href="/Oyster" img="/Oyster.png" time="Any" season="All" weather="Any" source="Ocean" />
+    <item status="false" name="Woodskip" href="/Woodskip" img="/Woodskip.png" time="Any" season="All" weather="Any" source="Secret Woods-Forest Farm" />
+    <item status="false" name="Glacierfish" href="/Glacierfish" img="/Glacierfish.png" time="Any" season="Winter" weather="Sun-Snow" source="Cindersap Forest" />
+    <item status="false" name="Void Salmon" href="/Void_Salmon" img="/Void_Salmon.png" time="06:00:00 AM-02:00:00 AM" season="All" weather="Any" source="Whitch's Swamp" />
+    <item status="false" name="Slimejack" href="/Slimejack" img="/Slimejack.png" time="06:00:00 AM-02:00:00 AM" season="All" weather="Any" source="Mutatnt Bug Lair" />
+  </fish>
+  <artifacts>
+    <item status="true" name="Dwarf Scroll I" href="/Dwarf_Scroll_I" img="/Dwarf_Scroll_I.png" time="00:00:00 AM" season="All" weather="" source="" />
+    <item status="true" name="Dwarf Scroll II" href="/Dwarf_Scroll_II" img="/Dwarf_Scroll_II.png" time="00:00:00 AM" season="All" weather="" source="" />
+    <item status="true" name="Dwarf Scroll III" href="/Dwarf_Scroll_III" img="/Dwarf_Scroll_III.png" time="00:00:00 AM" season="All" weather="" source="" />
+    <item status="true" name="Dwarf Scroll IV" href="/Dwarf_Scroll_IV" img="/Dwarf_Scroll_IV.png" time="00:00:00 AM" season="All" weather="" source="" />
+    <item status="true" name="Chipped Amphora" href="/Chipped_Amphora" img="/Chipped_Amphora.png" time="00:00:00 AM" season="All" weather="" source="" />
+    <item status="true" name="Arrowhead" href="/Arrowhead" img="/Arrowhead.png" time="00:00:00 AM" season="All" weather="" source="" />
+    <item status="true" name="Ancient Doll" href="/Ancient_Doll" img="/Ancient_Doll.png" time="00:00:00 AM" season="All" weather="" source="" />
+    <item status="true" name="Elvish Jewelry" href="/Elvish_Jewelry" img="/Elvish_Jewelry.png" time="00:00:00 AM" season="All" weather="" source="" />
+    <item status="true" name="Chewing Stick" href="/Chewing_Stick" img="/Chewing_Stick.png" time="00:00:00 AM" season="All" weather="" source="" />
+    <item status="false" name="Ornamental Fan" href="/Ornamental_Fan" img="/Ornamental_Fan.png" time="00:00:00 AM" season="All" weather="" source="" />
+    <item status="true" name="Dinosaur Egg" href="/Dinosaur_Egg" img="/Dinosaur_Egg.png" time="00:00:00 AM" season="All" weather="" source="" />
+    <item status="false" name="Rare Disc" href="/Rare_Disc" img="/Rare_Disc.png" time="00:00:00 AM" season="All" weather="" source="" />
+    <item status="false" name="Ancient Sword" href="/Ancient_Sword" img="/Ancient_Sword.png" time="00:00:00 AM" season="All" weather="" source="" />
+    <item status="true" name="Rusty Spoon" href="/Rusty_Spoon" img="/Rusty_Spoon.png" time="00:00:00 AM" season="All" weather="" source="" />
+    <item status="true" name="Rusty Spur" href="/Rusty_Spur" img="/Rusty_Spur.png" time="00:00:00 AM" season="All" weather="" source="" />
+    <item status="true" name="Rusty Cog" href="/Rusty_Cog" img="/Rusty_Cog.png" time="00:00:00 AM" season="All" weather="" source="" />
+    <item status="true" name="Chicken Statue" href="/Chicken_Statue" img="/Chicken_Statue.png" time="00:00:00 AM" season="All" weather="" source="" />
+    <item status="true" name="Ancient Seed" href="/Ancient_Seed" img="/Ancient_Seed.png" time="00:00:00 AM" season="All" weather="" source="" />
+    <item status="false" name="Prehistoric Tool" href="/Prehistoric_Tool" img="/Prehistoric_Tool.png" time="00:00:00 AM" season="All" weather="" source="" />
+    <item status="true" name="Dried Starfish" href="/Dried_Starfish" img="/Dried_Starfish.png" time="00:00:00 AM" season="All" weather="" source="" />
+    <item status="true" name="Anchor" href="/Anchor" img="/Anchor.png" time="00:00:00 AM" season="All" weather="" source="" />
+    <item status="true" name="Glass Shards" href="/Glass_Shards" img="/Glass_Shards.png" time="00:00:00 AM" season="All" weather="" source="" />
+    <item status="false" name="Bone Flute" href="/Bone_Flute" img="/Bone_Flute.png" time="00:00:00 AM" season="All" weather="" source="" />
+    <item status="true" name="Prehistoric Handaxe" href="/Prehistoric_Handaxe" img="/Prehistoric_Handaxe.png" time="00:00:00 AM" season="All" weather="" source="" />
+    <item status="false" name="Dwarvish Helm" href="/Dwarvish_Helm" img="/Dwarvish_Helm.png" time="00:00:00 AM" season="All" weather="" source="" />
+    <item status="true" name="Dwarf Gadget" href="/Dwarf_Gadget" img="/Dwarf_Gadget.png" time="00:00:00 AM" season="All" weather="" source="" />
+    <item status="false" name="Ancient Drum" href="/Ancient_Drum" img="/Ancient_Drum.png" time="00:00:00 AM" season="All" weather="" source="" />
+    <item status="false" name="Golden Mask" href="/Golden_Mask" img="/Golden_Mask.png" time="00:00:00 AM" season="All" weather="" source="" />
+    <item status="false" name="Golden Relic" href="/Golden_Relic" img="/Golden_Relic.png" time="00:00:00 AM" season="All" weather="" source="" />
+    <item status="false" name="Strange Doll" href="/Strange_Doll_(green)" img="/Strange_Doll_(green).png" time="00:00:00 AM" season="All" weather="" source="" />
+    <item status="false" name="Strange Doll" href="/Strange_Doll_(yellow)" img="/Strange_Doll_(yellow).png" time="00:00:00 AM" season="All" weather="" source="" />
+    <item status="false" name="Prehistoric Scapula" href="/Prehistoric_Scapula" img="/Prehistoric_Scapula.png" time="00:00:00 AM" season="All" weather="" source="" />
+    <item status="false" name="Prehistoric Tibia" href="/Prehistoric_Tibia" img="/Prehistoric_Tibia.png" time="00:00:00 AM" season="All" weather="" source="" />
+    <item status="true" name="Prehistoric Skull" href="/Prehistoric_Skull" img="/Prehistoric_Skull.png" time="00:00:00 AM" season="All" weather="" source="" />
+    <item status="true" name="Skeletal Hand" href="/Skeletal_Hand" img="/Skeletal_Hand.png" time="00:00:00 AM" season="All" weather="" source="" />
+    <item status="true" name="Prehistoric Rib" href="/Prehistoric_Rib" img="/Prehistoric_Rib.png" time="00:00:00 AM" season="All" weather="" source="" />
+    <item status="true" name="Prehistoric Vertebra" href="/Prehistoric_Vertebra" img="/Prehistoric_Vertebra.png" time="00:00:00 AM" season="All" weather="" source="" />
+    <item status="true" name="Skeletal Tail" href="/Skeletal_Tail" img="/Skeletal_Tail.png" time="00:00:00 AM" season="All" weather="" source="" />
+    <item status="false" name="Nautilus Fossil" href="/Nautilus_Fossil" img="/Nautilus_Fossil.png" time="00:00:00 AM" season="All" weather="" source="" />
+    <item status="true" name="Amphibian Fossil" href="/Amphibian_Fossil" img="/Amphibian_Fossil.png" time="00:00:00 AM" season="All" weather="" source="" />
+    <item status="false" name="Palm Fossil" href="/Palm_Fossil" img="/Palm_Fossil.png" time="00:00:00 AM" season="All" weather="" source="" />
+    <item status="true" name="Trilobite" href="/Trilobite" img="/Trilobite.png" time="00:00:00 AM" season="All" weather="" source="" />
+  </artifacts>
+  <minerals>
+    <item status="true" name="Emerald" href="/Emerald" img="/Emerald.png" time="00:00:00 AM" season="All" weather="" source="" />
+    <item status="true" name="Aquamarine" href="/Aquamarine" img="/Aquamarine.png" time="00:00:00 AM" season="All" weather="" source="" />
+    <item status="true" name="Ruby" href="/Ruby" img="/Ruby.png" time="00:00:00 AM" season="All" weather="" source="" />
+    <item status="true" name="Amethyst" href="/Amethyst" img="/Amethyst.png" time="00:00:00 AM" season="All" weather="" source="" />
+    <item status="true" name="Topaz" href="/Topaz" img="/Topaz.png" time="00:00:00 AM" season="All" weather="" source="" />
+    <item status="true" name="Jade" href="/Jade" img="/Jade.png" time="00:00:00 AM" season="All" weather="" source="" />
+    <item status="true" name="Diamond" href="/Diamond" img="/Diamond.png" time="00:00:00 AM" season="All" weather="" source="" />
+    <item status="false" name="Prismatic Shard" href="/Prismatic_Shard" img="/Prismatic_Shard.png" time="00:00:00 AM" season="All" weather="" source="" />
+    <item status="true" name="Quartz" href="/Quartz" img="/Quartz.png" time="00:00:00 AM" season="All" weather="" source="" />
+    <item status="true" name="Fire Quartz" href="/Fire_Quartz" img="/Fire_Quartz.png" time="00:00:00 AM" season="All" weather="" source="" />
+    <item status="true" name="Frozen Tear" href="/Frozen_Tear" img="/Frozen_Tear.png" time="00:00:00 AM" season="All" weather="" source="" />
+    <item status="true" name="Earth Crystal" href="/Earth_Crystal" img="/Earth_Crystal.png" time="00:00:00 AM" season="All" weather="" source="" />
+    <item status="false" name="Alamite" href="/Alamite" img="/Alamite.png" time="00:00:00 AM" season="All" weather="" source="" />
+    <item status="true" name="Bixite" href="/Bixite" img="/Bixite.png" time="00:00:00 AM" season="All" weather="" source="" />
+    <item status="false" name="Baryte" href="/Baryte" img="/Baryte.png" time="00:00:00 AM" season="All" weather="" source="" />
+    <item status="true" name="Aerinite" href="/Aerinite" img="/Aerinite.png" time="00:00:00 AM" season="All" weather="" source="" />
+    <item status="true" name="Calcite" href="/Calcite" img="/Calcite.png" time="00:00:00 AM" season="All" weather="" source="" />
+    <item status="true" name="Dolomite" href="/Dolomite" img="/Dolomite.png" time="00:00:00 AM" season="All" weather="" source="" />
+    <item status="false" name="Esperite" href="/Esperite" img="/Esperite.png" time="00:00:00 AM" season="All" weather="" source="" />
+    <item status="false" name="Fluorapatite" href="/Fluorapatite" img="/Fluorapatite.png" time="00:00:00 AM" season="All" weather="" source="" />
+    <item status="false" name="Geminite" href="/Geminite" img="/Geminite.png" time="00:00:00 AM" season="All" weather="" source="" />
+    <item status="false" name="Helvite" href="/Helvite" img="/Helvite.png" time="00:00:00 AM" season="All" weather="" source="" />
+    <item status="false" name="Jamborite" href="/Jamborite" img="/Jamborite.png" time="00:00:00 AM" season="All" weather="" source="" />
+    <item status="true" name="Jagoite" href="/Jagoite" img="/Jagoite.png" time="00:00:00 AM" season="All" weather="" source="" />
+    <item status="true" name="Kyanite" href="/Kyanite" img="/Kyanite.png" time="00:00:00 AM" season="All" weather="" source="" />
+    <item status="false" name="Lunarite" href="/Lunarite" img="/Lunarite.png" time="00:00:00 AM" season="All" weather="" source="" />
+    <item status="true" name="Malachite" href="/Malachite" img="/Malachite.png" time="00:00:00 AM" season="All" weather="" source="" />
+    <item status="false" name="Neptunite" href="/Neptunite" img="/Neptunite.png" time="00:00:00 AM" season="All" weather="" source="" />
+    <item status="true" name="Lemon Stone" href="/Lemon_Stone" img="/Lemon_Stone.png" time="00:00:00 AM" season="All" weather="" source="" />
+    <item status="true" name="Nekoite" href="/Nekoite" img="/Nekoite.png" time="00:00:00 AM" season="All" weather="" source="" />
+    <item status="false" name="Orpiment" href="/Orpiment" img="/Orpiment.png" time="00:00:00 AM" season="All" weather="" source="" />
+    <item status="false" name="Petrified Slime" href="/Petrified_Slime" img="/Petrified_Slime.png" time="00:00:00 AM" season="All" weather="" source="" />
+    <item status="true" name="Thunder Egg" href="/Thunder_Egg" img="/Thunder_Egg.png" time="00:00:00 AM" season="All" weather="" source="" />
+    <item status="false" name="Pyrite" href="/Pyrite" img="/Pyrite.png" time="00:00:00 AM" season="All" weather="" source="" />
+    <item status="true" name="Ocean Stone" href="/Ocean_Stone" img="/Ocean_Stone.png" time="00:00:00 AM" season="All" weather="" source="" />
+    <item status="false" name="Ghost Crystal" href="/Ghost_Crystal" img="/Ghost_Crystal.png" time="00:00:00 AM" season="All" weather="" source="" />
+    <item status="false" name="Tigerseye" href="/Tigerseye" img="/Tigerseye.png" time="00:00:00 AM" season="All" weather="" source="" />
+    <item status="true" name="Jasper" href="/Jasper" img="/Jasper.png" time="00:00:00 AM" season="All" weather="" source="" />
+    <item status="true" name="Opal" href="/Opal" img="/Opal.png" time="00:00:00 AM" season="All" weather="" source="" />
+    <item status="false" name="Fire Opal" href="/Fire_Opal" img="/Fire_Opal.png" time="00:00:00 AM" season="All" weather="" source="" />
+    <item status="false" name="Celestine" href="/Celestine" img="/Celestine.png" time="00:00:00 AM" season="All" weather="" source="" />
+    <item status="false" name="Marble" href="/Marble" img="/Marble.png" time="00:00:00 AM" season="All" weather="" source="" />
+    <item status="true" name="Sandstone" href="/Sandstone" img="/Sandstone.png" time="00:00:00 AM" season="All" weather="" source="" />
+    <item status="true" name="Granite" href="/Granite" img="/Granite.png" time="00:00:00 AM" season="All" weather="" source="" />
+    <item status="false" name="Basalt" href="/Basalt" img="/Basalt.png" time="00:00:00 AM" season="All" weather="" source="" />
+    <item status="true" name="Limestone" href="/Limestone" img="/Limestone.png" time="00:00:00 AM" season="All" weather="" source="" />
+    <item status="false" name="Soapstone" href="/Soapstone" img="/Soapstone.png" time="00:00:00 AM" season="All" weather="" source="" />
+    <item status="true" name="Hematite" href="/Hematite" img="/Hematite.png" time="00:00:00 AM" season="All" weather="" source="" />
+    <item status="false" name="Mudstone" href="/Mudstone" img="/Mudstone.png" time="00:00:00 AM" season="All" weather="" source="" />
+    <item status="false" name="Obsidian" href="/Obsidian" img="/Obsidian.png" time="00:00:00 AM" season="All" weather="" source="" />
+    <item status="true" name="Slate" href="/Slate" img="/Slate.png" time="00:00:00 AM" season="All" weather="" source="" />
+    <item status="true" name="Fairy Stone" href="/Fairy_Stone" img="/Fairy_Stone.png" time="00:00:00 AM" season="All" weather="" source="" />
+    <item status="false" name="Star Shards" href="/Star_Shards" img="/Star_Shards.png" time="00:00:00 AM" season="All" weather="" source="" />
+  </minerals>
+  <cooking>
+    <item status="false" name="Fried Egg" href="/Fried_Egg" img="/Fried_Egg.png" time="00:00:00 AM" season="All" weather="" source="" />
+    <item status="false" name="Omelet" href="/Omelet" img="/Omelet.png" time="00:00:00 AM" season="All" weather="" source="" />
+    <item status="false" name="Salad" href="/Salad" img="/Salad.png" time="00:00:00 AM" season="All" weather="" source="" />
+    <item status="false" name="Cheese Cauliflower" href="/Cheese_Cauliflower" img="/Cheese_Cauliflower.png" time="00:00:00 AM" season="All" weather="" source="" />
+    <item status="false" name="Baked Fish" href="/Baked_Fish" img="/Baked_Fish.png" time="00:00:00 AM" season="All" weather="" source="" />
+    <item status="false" name="Parsnip Soup" href="/Parsnip_Soup" img="/Parsnip_Soup.png" time="00:00:00 AM" season="All" weather="" source="" />
+    <item status="false" name="Vegetable Medley" href="/Vegetable_Medley" img="/Vegetable_Medley.png" time="00:00:00 AM" season="All" weather="" source="" />
+    <item status="false" name="Complete Breakfast" href="/Complete_Breakfast" img="/Complete_Breakfast.png" time="00:00:00 AM" season="All" weather="" source="" />
+    <item status="false" name="Fried Calamari" href="/Fried_Calamari" img="/Fried_Calamari.png" time="00:00:00 AM" season="All" weather="" source="" />
+    <item status="false" name="Strange Bun" href="/Strange_Bun" img="/Strange_Bun.png" time="00:00:00 AM" season="All" weather="" source="" />
+    <item status="false" name="Lucky Lunch" href="/Lucky_Lunch" img="/Lucky_Lunch.png" time="00:00:00 AM" season="All" weather="" source="" />
+    <item status="false" name="Fried Mushroom" href="/Fried_Mushroom" img="/Fried_Mushroom.png" time="00:00:00 AM" season="All" weather="" source="" />
+    <item status="false" name="Pizza" href="/Pizza" img="/Pizza.png" time="00:00:00 AM" season="All" weather="" source="" />
+    <item status="false" name="Bean Hotpot" href="/Bean_Hotpot" img="/Bean_Hotpot.png" time="00:00:00 AM" season="All" weather="" source="" />
+    <item status="false" name="Glazed Yams" href="/Glazed_Yams" img="/Glazed_Yams.png" time="00:00:00 AM" season="All" weather="" source="" />
+    <item status="false" name="Carp Surprise" href="/Carp_Surprise" img="/Carp_Surprise.png" time="00:00:00 AM" season="All" weather="" source="" />
+    <item status="false" name="Hashbrowns" href="/Hashbrowns" img="/Hashbrowns.png" time="00:00:00 AM" season="All" weather="" source="" />
+    <item status="false" name="Pancakes" href="/Pancakes" img="/Pancakes.png" time="00:00:00 AM" season="All" weather="" source="" />
+    <item status="false" name="Salmon Dinner" href="/Salmon_Dinner" img="/Salmon_Dinner.png" time="00:00:00 AM" season="All" weather="" source="" />
+    <item status="false" name="Fish Taco" href="/Fish_Taco" img="/Fish_Taco.png" time="00:00:00 AM" season="All" weather="" source="" />
+    <item status="false" name="Crispy Bass" href="/Crispy_Bass" img="/Crispy_Bass.png" time="00:00:00 AM" season="All" weather="" source="" />
+    <item status="false" name="Pepper Poppers" href="/Pepper_Poppers" img="/Pepper_Poppers.png" time="00:00:00 AM" season="All" weather="" source="" />
+    <item status="false" name="Bread" href="/Bread" img="/Bread.png" time="00:00:00 AM" season="All" weather="" source="" />
+    <item status="false" name="Tom Kha Soup" href="/Tom_Kha_Soup" img="/Tom_Kha_Soup.png" time="00:00:00 AM" season="All" weather="" source="" />
+    <item status="false" name="Trout Soup" href="/Trout_Soup" img="/Trout_Soup.png" time="00:00:00 AM" season="All" weather="" source="" />
+    <item status="false" name="Chocolate Cake" href="/Chocolate_Cake" img="/Chocolate_Cake.png" time="00:00:00 AM" season="All" weather="" source="" />
+    <item status="false" name="Pink Cake" href="/Pink_Cake" img="/Pink_Cake.png" time="00:00:00 AM" season="All" weather="" source="" />
+    <item status="false" name="Rhubarb Pie" href="/Rhubarb_Pie" img="/Rhubarb_Pie.png" time="00:00:00 AM" season="All" weather="" source="" />
+    <item status="false" name="Cookie" href="/Cookie" img="/Cookie.png" time="00:00:00 AM" season="All" weather="" source="" />
+    <item status="false" name="Spaghetti" href="/Spaghetti" img="/Spaghetti.png" time="00:00:00 AM" season="All" weather="" source="" />
+    <item status="false" name="Fried Eel" href="/Fried_Eel" img="/Fried_Eel.png" time="00:00:00 AM" season="All" weather="" source="" />
+    <item status="false" name="Spicy Eel" href="/Spicy_Eel" img="/Spicy_Eel.png" time="00:00:00 AM" season="All" weather="" source="" />
+    <item status="false" name="Sashimi" href="/Sashimi" img="/Sashimi.png" time="00:00:00 AM" season="All" weather="" source="" />
+    <item status="false" name="Maki Roll" href="/Maki_Roll" img="/Maki_Roll.png" time="00:00:00 AM" season="All" weather="" source="" />
+    <item status="false" name="Tortilla" href="/Tortilla" img="/Tortilla.png" time="00:00:00 AM" season="All" weather="" source="" />
+    <item status="false" name="Red Plate" href="/Red_Plate" img="/Red_Plate.png" time="00:00:00 AM" season="All" weather="" source="" />
+    <item status="false" name="Eggplant Parmesan" href="/Eggplant_Parmesan" img="/Eggplant_Parmesan.png" time="00:00:00 AM" season="All" weather="" source="" />
+    <item status="false" name="Rice Pudding" href="/Rice_Pudding" img="/Rice_Pudding.png" time="00:00:00 AM" season="All" weather="" source="" />
+    <item status="false" name="Ice Cream" href="/Ice_Cream" img="/Ice_Cream.png" time="00:00:00 AM" season="All" weather="" source="" />
+    <item status="false" name="Blueberry Tart" href="/Blueberry_Tart" img="/Blueberry_Tart.png" time="00:00:00 AM" season="All" weather="" source="" />
+    <item status="false" name="Autumn's Bounty" href="/Autumn%27s_Bounty" img="/Autumn%27s_Bounty.png" time="00:00:00 AM" season="All" weather="" source="" />
+    <item status="false" name="Pumpkin Soup" href="/Pumpkin_Soup" img="/Pumpkin_Soup.png" time="00:00:00 AM" season="All" weather="" source="" />
+    <item status="false" name="Super Meal" href="/Super_Meal" img="/Super_Meal.png" time="00:00:00 AM" season="All" weather="" source="" />
+    <item status="false" name="Cranberry Sauce" href="/Cranberry_Sauce" img="/Cranberry_Sauce.png" time="00:00:00 AM" season="All" weather="" source="" />
+    <item status="false" name="Stuffing" href="/Stuffing" img="/Stuffing.png" time="00:00:00 AM" season="All" weather="" source="" />
+    <item status="false" name="Farmer's Lunch" href="/Farmer%27s_Lunch" img="/Farmer%27s_Lunch.png" time="00:00:00 AM" season="All" weather="" source="" />
+    <item status="false" name="Survival Burger" href="/Survival_Burger" img="/Survival_Burger.png" time="00:00:00 AM" season="All" weather="" source="" />
+    <item status="false" name="Dish O' The Sea" href="/Dish_O%27_The_Sea" img="/Dish_O%27_The_Sea.png" time="00:00:00 AM" season="All" weather="" source="" />
+    <item status="false" name="Miner's Treat" href="/Miner%27s_Treat" img="/Miner%27s_Treat.png" time="00:00:00 AM" season="All" weather="" source="" />
+    <item status="false" name="Roots Platter" href="/Roots_Platter" img="/Roots_Platter.png" time="00:00:00 AM" season="All" weather="" source="" />
+    <item status="false" name="Algae Soup" href="/Algae_Soup" img="/Algae_Soup.png" time="00:00:00 AM" season="All" weather="" source="" />
+    <item status="false" name="Pale Broth" href="/Pale_Broth" img="/Pale_Broth.png" time="00:00:00 AM" season="All" weather="" source="" />
+    <item status="false" name="Plum Pudding" href="/Plum_Pudding" img="/Plum_Pudding.png" time="00:00:00 AM" season="All" weather="" source="" />
+    <item status="false" name="Artichoke Dip" href="/Artichoke_Dip" img="/Artichoke_Dip.png" time="00:00:00 AM" season="All" weather="" source="" />
+    <item status="false" name="Stir Fry" href="/Stir_Fry" img="/Stir_Fry.png" time="00:00:00 AM" season="All" weather="" source="" />
+    <item status="false" name="Roasted Hazelnuts" href="/Roasted_Hazelnuts" img="/Roasted_Hazelnuts.png" time="00:00:00 AM" season="All" weather="" source="" />
+    <item status="false" name="Pumpkin Pie" href="/Pumpkin_Pie" img="/Pumpkin_Pie.png" time="00:00:00 AM" season="All" weather="" source="" />
+    <item status="false" name="Radish Salad" href="/Radish_Salad" img="/Radish_Salad.png" time="00:00:00 AM" season="All" weather="" source="" />
+    <item status="false" name="Fruit Salad" href="/Fruit_Salad" img="/Fruit_Salad.png" time="00:00:00 AM" season="All" weather="" source="" />
+    <item status="false" name="Blackberry Cobbler" href="/Blackberry_Cobbler" img="/Blackberry_Cobbler.png" time="00:00:00 AM" season="All" weather="" source="" />
+    <item status="false" name="Cranberry Candy" href="/Cranberry_Candy" img="/Cranberry_Candy.png" time="00:00:00 AM" season="All" weather="" source="" />
+    <item status="false" name="Bruschetta" href="/Bruschetta" img="/Bruschetta.png" time="00:00:00 AM" season="All" weather="" source="" />
+    <item status="false" name="Coleslaw" href="/Coleslaw" img="/Coleslaw.png" time="00:00:00 AM" season="All" weather="" source="" />
+    <item status="false" name="Fiddlehead Risotto" href="/Fiddlehead_Risotto" img="/Fiddlehead_Risotto.png" time="00:00:00 AM" season="All" weather="" source="" />
+    <item status="false" name="Poppyseed Muffin" href="/Poppyseed_Muffin" img="/Poppyseed_Muffin.png" time="00:00:00 AM" season="All" weather="" source="" />
+    <item status="false" name="Chowder" href="/Chowder" img="/Chowder.png" time="00:00:00 AM" season="All" weather="" source="" />
+    <item status="false" name="Lobster Bisque" href="/Lobster_Bisque" img="/Lobster_Bisque.png" time="00:00:00 AM" season="All" weather="" source="" />
+    <item status="false" name="Fish Stew" href="/Fish_Stew" img="/Fish_Stew.png" time="00:00:00 AM" season="All" weather="" source="" />
+    <item status="false" name="Escargot" href="/Escargot" img="/Escargot.png" time="00:00:00 AM" season="All" weather="" source="" />
+    <item status="false" name="Maple Bar" href="/Maple_Bar" img="/Maple_Bar.png" time="00:00:00 AM" season="All" weather="" source="" />
+    <item status="false" name="Crab Cakes" href="/Crab_Cakes" img="/Crab_Cakes.png" time="00:00:00 AM" season="All" weather="" source="" />
+  </cooking>
+</collections>
